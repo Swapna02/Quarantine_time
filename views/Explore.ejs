@@ -1,0 +1,505 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<style>
+    .msg{
+               text-align: center;
+                margin-top: 50;
+                margin-left: 100;
+                margin-right: 100;
+           }
+           .syi{
+               text-align: center;
+               margin-top: 30px;
+               margin-left: -25;
+               margin-bottom: -30px;
+           }
+           
+.container1{
+  display:table;
+  padding:5px;
+  margin:20px;
+  margin-top: -20px;
+}
+           .modal-content {
+               
+    background-color: rgb(192, 229, 253,0.9);
+    margin: 15% auto 15% auto;
+    border: 1px solid #888;
+    width: 30%; 
+    z-index: 1;
+	padding-bottom: 30px;
+    padding-top: -30;
+}
+.signupbtn{
+    position: absolute;
+    right: 36%;
+    border: 0px;
+    color: white;
+    background-color: dodgerblue;
+    top: 80%;
+}
+           body{
+            background-image: url("https://github.com/Swapna02/Quartine-time/blob/master/public/images/background.jpg?raw=true");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bgv{
+    margin: 30;
+    margin-left: 350;
+    margin-right: 350;
+    width: 800;
+    height: 750px;
+    text-align: center;
+
+}
+
+div.modal input[type=text],div.modal input[type=password],div.modal input[type=tel] {
+    width: 80%;
+    padding: 10px 20px;
+    margin: 14px 26px 10px 4px;
+    margin-left: 25px;
+    border-radius: 25px;
+    display: inline-block;
+    border: 1.5px solid dodgerblue;
+    box-sizing: border-box;
+	font-size:16px;
+}
+
+.container{
+  display:table;
+  padding:5px;
+  margin:20px;
+  margin-top: -20px;
+}
+.modal {
+	display:none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+/* For big zoom in img */
+.ovimg{
+    margin-top: 150px;
+}
+input[type=email],[type=password] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid dodgerblue;
+  resize: vertical;
+  margin-left: 50px;
+  color: dodgerblue;
+  border-radius: 25px;
+}
+input[type=submit] {
+  background-color:dodgerblue;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+input[type=submit]:hover {
+  background-color: dodgerblue;
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 15.2%;
+    top: 10%;
+    color:white;
+    font-size: 35px;
+    font-weight: bold;
+}
+.close_login {
+    position: absolute;
+    right: 36.2%;
+    top: 29%;
+    z-index: 2;
+    font-weight: bold;
+    color:dodgerblue;
+    font-size: 35px;
+}
+.close:hover,.close:focus,.close_login:hover,.close_login:focus {
+    color: red;
+    cursor: pointer;
+}
+
+.like_btn{
+    width: 30px;
+    height: 10px;
+    font-size: 10px;
+    padding: 2px;
+    margin-top: -12px;
+    border: white;
+    margin-right: 40px;
+}
+.like_btn:hover{
+    color: dodgerblue;
+    background-color: white;
+}
+div.modal input[type=email],div.modal input[type=password],div.modal input[type=tel] {
+    width: 80%;
+    padding: 10px 20px;
+    margin: 14px 26px 10px 4px;
+    margin-left: 40px;
+    border-radius: 25px;
+    display: inline-block;
+    border: 1.5px solid dodgerblue;
+    box-sizing: border-box;
+	font-size:16px;
+}
+</style>
+    </head>
+    <body>
+        <nav class="navbar navbar-dark bg-primary">
+            <nav class="navbar navbar-dark bg-primary">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-nav" >
+                    <a class=" nav-item nav-link active  "  href="/">
+                    QURANTINE-TIME
+                    </a>
+                </div>
+            </nav> 
+            <nav  class="navbar navbar-expand-lg navbar-light bg-primary">
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
+                    <div class="navbar-nav" >
+                        <!-- <a class="nav-item nav-link  " href="/">HOME </a> -->
+                        <% if (!user){ %>
+                            <a class="nav-item nav-link " onclick=" document.getElementById('login-wrapper').style.display='block'" style="display:block;" href="#">FEED </a>
+                            <% } else { %>
+                            <a class="nav-item nav-link " style="display:block;" href="/feed">FEED </a>
+                            <% } %>
+                        <a class="nav-item nav-link" href="/news">NEWS</a>
+                        <a class="nav-item nav-link active" href="/Explore">EXPLORE <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link" href="/Gallery">GALLERY</a>
+                    </div>
+                </div>            
+            </nav>
+        </nav>
+        <div class="msg">
+            <h6>hello there!! are you bored of being qurantined? Meet new peoples with great ideas and make it chilled.</h6>
+        </div>
+        <div style="margin-top: 25; font-size: smaller;">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link active" href="Categories/ALL">ALL</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Categories/FOOD">FOOD</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Categories/ART">ART</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Categories/CRAFT">CRAFT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Categories/WORKOUT">WORKOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Categories/OTHERS">OTHERS</a>
+                </li>
+          </ul>
+        </div>
+
+        <div class="media">
+            <% if(tl>0){ %>
+            <img src="./uploads/<%= things[0].image %>" class="align-self-center mr-3 bgv" 
+            onclick="document.getElementById('modal-wrapper').style.display='block'" style="display:block;"
+            alt="...">
+            <% }else{ %>
+                <img src=".." class="align-self-center mr-3 bgv" 
+            onclick="document.getElementById('modal-wrapper').style.display='block'" style="display:block;"
+            alt="...">
+            <% } %>
+            <div class="media-body">
+            </div>
+        </div>
+      
+        <!-- <div>
+            <img src="..." alt="..." class="rounded-sm">
+            <img src="..." alt="..." class="rounded-lg">
+            <img src="..." alt="..." class="rounded-sm">
+            <img src="..." alt="..." class="rounded-lg">
+            <img src="..." alt="..." class="rounded-sm">
+            <img src="..." alt="..." class="rounded-lg">
+            <img src="..." alt="..." class="rounded-sm">
+            <img src="..." alt="..." class="rounded-lg">
+            <img src="..." alt="..." class="rounded-sm">
+        </div> -->
+        <div>
+           
+            <div class="row row-cols-1 row-cols-md-4" style="margin: 30; margin-left: 100;">
+                <% if(tl>0){ %>
+                <% things.forEach(function (post) { %>
+                    
+                <div class="card"style="margin:25;">
+                    <div class="card-body">
+                        <nav class="navbar navbar-primary">
+                            <a class="navbar-brand" href="#">
+                              <% if(post.userpic){ %>
+                                <img src="./uploads/<%= post.userpic %>" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+                                <% }else{ %>
+                                  <img src="https://github.com/Swapna02/Quartine-time/blob/master/public/images/userdefpic.jpg?raw=true" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+                                  <% } %>
+                                <label for="usern" style="font-size:medium;"><%= post.username %></label>
+                            </a>
+
+                            <div class="nothing">
+                                <small class="text-muted"><%= post.crDate %></small> 
+                            </div>
+                        </nav>
+                        <% if(post.info != ''){ %>
+                            <p class="card-text" style="font-size: 12;"><%= post.info %></p>
+                            <% } %>
+                            <% if(post.image != ''){ %>
+                            <img src="../uploads/<%= post.image %>" class="card-img-bottom" alt=".." width="200px" height="350px" onclick="window.location.href='posts/<%= post._id %>'">
+                            <% } %>
+                            <div style="margin-top: 15;margin-left: 2 ;">
+                                <svg class="bi bi-heart-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                    style="margin-right: 1;"onclick="window.location.href='like/<%= post._id %>'" >
+                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                                </svg>
+                                <button type="button" class="btn btn-outline-info like_btn"><%= post.likes %></button>
+                                <svg class="bi bi-chat-square-dots-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" onclick="window.location.href='comment/<%= post._id %>'" >
+                                  <path fill-rule="evenodd" d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2V2zm5 4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                                </svg>
+                                <button type="button" class="btn btn-outline-info like_btn"><%= post.comments %></button>
+                                <svg class="bi bi-reply-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="float: right;" onclick="window.location.href='share/<%= post._id %>'" >
+                                    <path d="M9.079 11.9l4.568-3.281a.719.719 0 0 0 0-1.238L9.079 4.1A.716.716 0 0 0 8 4.719V6c-1.5 0-6 0-7 8 2.5-4.5 7-4 7-4v1.281c0 .56.606.898 1.079.62z"/>
+                                </svg>
+                            </div>
+                    </div>
+                </div> 
+                <% }) %>
+                <% } %>
+            </div>
+        </div>
+
+        <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
+          <ul class="nav" >
+              <li class="nav-item ">
+                <a class="nav-link" style="color: white;" href="/About">About</a>
+              </li>
+              <li class="nav-item" >
+                <a class="nav-link" style="color: white;" href="/Explore">Explore</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="color: white;" href="/Developers">Developers</a>
+              </li><li class="nav-item ">
+                  <a class="nav-link active" style="color: white;" href="#">Channels</a>
+                </li>
+                <li class="nav-item" >
+                  <a class="nav-link" style="color: white;" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" style="color: white;" href="#">Privacy</a>
+                </li>
+            </ul>
+            <ul class="justify-content-end">
+              <svg class="bi bi-arrow-up-square-fill sarrow"  style="margin-top: 12px;" width="2em" height="2em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
+                </svg>
+            </ul>
+        </nav>
+
+
+          
+<div id="modal-wrapper" class="modal">
+    <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close Modal">&times;</span>
+   
+    <div class="media ovimg">
+      <% if(tl>0){ %>
+        <img src="./uploads/<%= things[0].image %>" class="align-self-center mr-3 bgv" 
+        alt="...">
+        <% } else { %>
+          <img src="" class="align-self-center mr-3 bgv" 
+                alt="...">
+                <% }  %>
+        <div class="media-body">
+        </div>
+    </div>
+
+    <div class="card w-75 " style="margin-left: 200;margin-bottom: 100px;">
+        <div class="media">
+          <% if(things[0].userpic){ %>
+            <img src="./uploads/<%= things[0].userpic %>" class="mr-3" alt="..." width="50px" height="50px">
+            <% }else{ %>
+              <img src="https://github.com/Swapna02/Quartine-time/blob/master/public/images/userdefpic.jpg?raw=true" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+              <% } %>
+            <div class="media-body">
+              <% if(things[0].info){ %>
+              <h5 class="mt-0"><%= things[0].info %></h5>
+              <% }else{ %>
+                <h5 class="mt-0">No info</h5>
+                <% } %>
+            </div>
+          </div>
+      </div>
+      
+      <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
+        <ul class="nav" >
+            <li class="nav-item ">
+              <a class="nav-link" style="color: white;" href="/About">About</a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" style="color: white;" href="/Explore">Explore</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: white;" href="/Developers">Developers</a>
+            </li><li class="nav-item ">
+                <a class="nav-link active" style="color: white;" href="#">Channels</a>
+              </li>
+              <li class="nav-item" >
+                <a class="nav-link" style="color: white;" href="#">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="color: white;" href="#">Privacy</a>
+              </li>
+          </ul>
+          <ul class="justify-content-end">
+            <svg class="bi bi-arrow-up-square-fill sarrow"  style="margin-top: 12px;" width="2em" height="2em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
+              </svg>
+          </ul>
+      </nav>
+ </div>
+ 
+ <% if(msg !=''){ %> 
+    <div id="msg-wrapper" class="modal" style="display: block;" >
+        <span onclick="document.getElementById('msg-wrapper').style.display='none'" class="close_login" style="color: black; margin-right: 15px;" title="Close Modal">&times;</span>
+       <div class="modal-content" style="background-color:unset;">
+        <div class="container1" style=" height: 130px;border: 1px solid dodgerblue; margin-top: -5px; background-color: rgb(206, 240, 250); ">
+            <h3 style="background-color:dodgerblue;padding: 4px;">Alert message</h3>
+            
+            <h6 ><%= msg %></h6>
+            
+          </div>
+       </div>
+         </div>
+         <% } %> 
+    
+    
+           
+         <div id="login-wrapper" class="modal">
+          <span onclick="document.getElementById('login-wrapper').style.display='none'" class="close_login" title="Close Modal">&times;</span>
+         
+          <form class="modal-content" action="/feed" method="POST"  >
+              <div class="container1" style="height: 230px;">
+                <h3 class="syi">Share your idea</h3>
+                <br>
+                <input type="email" placeholder="Enter email" name="uemail" id="lemail" required>
+                <br>
+                <input type="password" placeholder="Enter Password" name="upassword" id="lp" required>
+                <br>
+                <button type="submit" class="signupbtn" style="margin-bottom: 15px; top: 77%; left: 35%;" onclick="regvalidate()">Create my space</button>
+              </div>
+              <h6 style="margin-top: 1px; position: absolute; top: 90%; left: 27%;">Not signed up yet?.. <a href="#" onclick="document.getElementById('login-wrapper').style.display='none' ,document.getElementById('Register-wrapper').style.display='block'">Sing Up</a> </h6>
+          </form> 
+          <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
+            <ul class="nav" >
+                <li class="nav-item ">
+                  <a class="nav-link" style="color: white;" href="/About">About</a>
+                </li>
+                <li class="nav-item" >
+                  <a class="nav-link" style="color: white;" href="/Explore">Explore</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" style="color: white;" href="/Developers">Developers</a>
+                </li><li class="nav-item ">
+                    <a class="nav-link active" style="color: white;" href="#">Channels</a>
+                  </li>
+                  <li class="nav-item" >
+                    <a class="nav-link" style="color: white;" href="#">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" style="color: white;" href="#">Privacy</a>
+                  </li>
+              </ul>
+              <ul class="justify-content-end">
+                <svg class="bi bi-arrow-up-square-fill sarrow"  style="margin-top: 12px;" width="2em" height="2em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
+                  </svg>
+              </ul>
+          </nav>
+       </div>
+
+ <div id="Register-wrapper" class="modal">
+    <span onclick="document.getElementById('Register-wrapper').style.display='none'" class="close_login" title="Close Modal">&times;</span>
+    <form action="/" method="POST" class="modal-content" style="height: 350px;"  >
+        <div class="container1" >
+          <h3 class="syi">Register here</h3>
+          <br><br>
+          <input type="email" placeholder="Enter email" name="uremail" id="name" required >
+          <br>
+          <input type="password" placeholder="Enter Password" name="urpswd" id="p" required>
+          <br>
+          <input type="password" placeholder="Confirm Password" name="urcpswd" id="cp" required>
+          <br>
+          <button type="submit" class="signupbtn" style="margin-bottom: 10px; top: 77%;left: 40%;" onclick="regisvalidate()">Register here</button>
+          <br>
+        </div>
+        <h6 style="margin-top: 1px;margin-bottom: 10px; position: absolute; top: 88%; left: 27%;">Already singed up..? <a href="#" onclick="document.getElementById('login-wrapper').style.display='block' ,document.getElementById('Register-wrapper').style.display='none'">Sing In</a> </h6>
+    </form> 
+    <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
+      <ul class="nav" >
+          <li class="nav-item ">
+            <a class="nav-link" style="color: white;" href="/About">About</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" style="color: white;" href="/Explore">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: white;" href="/Developers">Developers</a>
+          </li><li class="nav-item ">
+              <a class="nav-link active" style="color: white;" href="#">Channels</a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" style="color: white;" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: white;" href="#">Privacy</a>
+            </li>
+        </ul>
+        <ul class="justify-content-end">
+          <svg class="bi bi-arrow-up-square-fill sarrow"  style="margin-top: 12px;" width="2em" height="2em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
+            </svg>
+        </ul>
+    </nav>
+ </div>
+
+         <script>
+         // If user clicks anywhere outside of the modal, Modal will close
+         
+         var modal = document.getElementById('modal-wrapper');
+         window.onclick = function(event) {
+             if (event.target == modal) {
+                 modal.style.display = "none";
+             }
+         }
+
+         var modal = document.getElementById('login-wrapper');
+         window.onclick = function(event) {
+             if (event.target == modal) {
+                 modal.style.display = "none";
+             }
+         }
+
+         </script>
+         
+
+    </body>
+    </html>

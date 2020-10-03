@@ -1,0 +1,416 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>     
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+</script>
+
+        <STyle>
+
+body{
+    background-color:rgba(51, 52, 58, 0.87);
+    background-size: contain;
+}
+           * {
+  box-sizing: border-box;
+}
+input[type=email],[type=password] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid dodgerblue;
+  resize: vertical;
+  margin-left: 50px;
+  color: dodgerblue;
+  border-radius: 25px;
+}
+input[type=submit] {
+  background-color:dodgerblue;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+input[type=submit]:hover {
+  background-color: dodgerblue;
+}
+.container {
+  border-radius: 5px;
+  background-color:rgb(192, 195, 197);
+  padding: 20px;
+  width: 500px;
+  height: 300px;
+  margin-left: 150px;
+  margin-top: 150px;
+}
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 20px;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 300px) {
+  .col-75, input[type=submit] {
+    width: 50%;
+    margin-top: 0;
+  }
+}
+           .modal-content {
+               
+    background-color: rgba(192, 229, 253, 0.9);
+    margin: 15% auto 15% auto;
+    border: 1px solid #888;
+    width: 30%; 
+    z-index: 1;
+	padding-bottom: 30px;
+    padding-top: -30;
+}
+.signupbtn{
+    position: absolute;
+    right: 36%;
+    border: 0px;
+    color: white;
+    background-color: dodgerblue;
+    top: 80%;
+}
+
+div.modal input[type=email],div.modal input[type=password],div.modal input[type=tel] {
+    width: 80%;
+    padding: 10px 20px;
+    margin: 14px 26px 10px 4px;
+    margin-left: 40px;
+    border-radius: 25px;
+    display: inline-block;
+    border: 1.5px solid dodgerblue;
+    box-sizing: border-box;
+	font-size:16px;
+}
+.syi{
+               text-align: center;
+               margin-top: 30px;
+               margin-left: -25;
+               margin-bottom: -30px;
+           }
+
+.container1{
+  display:table;
+  padding:5px;
+  margin:20px;
+  margin-top: -20px;
+}
+.modal {
+	display:none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+/* For big zoom in img */
+.ovimg{
+    margin-top: 150px;
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 15.2%;
+    top: 10%;
+    color:white;
+    font-size: 35px;
+    font-weight: bold;
+}
+.close_login {
+    position: absolute;
+    right: 36.2%;
+    top: 29%;
+    z-index: 2;
+    font-weight: bold;
+    color:dodgerblue;
+    font-size: 35px;
+}
+.close:hover,.close:focus,.close_login:hover,.close_login:focus {
+    color: red;
+    cursor: pointer;
+}
+
+.top_head{
+    text-align: center;
+    font-size: 55px;
+    margin: 3%;
+    font-style: italic;
+}
+.topics{
+    position: absolute;
+    z-index: -1;
+    background-color: white;
+    width: 20%;
+    margin-left: 14%;
+    height: 90%;
+}
+.list_items{
+    list-style-type: none;
+    margin-left: 15%;
+    font-size: 20px;
+    line-height: 250%;
+}
+.inbox{
+    background-color: white;
+    float: right;
+    width: 48%;
+    height: 35%;
+    margin-right: 10%;
+}
+div.inbox textarea[type=text]{
+height: 85%;
+width: 100%;
+}
+::placeholder {
+    padding: 20px;
+    font-style: italic;
+  font-size: 30px;
+}
+* {
+  box-sizing: border-box;
+}
+        </STyle>
+    </head>
+    <body>
+       
+                    <nav class="navbar navbar-dark bg-primary">
+                        <nav class="navbar navbar-dark bg-primary">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="navbar-nav" >
+                                <a class=" nav-item nav-link active  "  href="/">
+                                QUARANTINE-TIME
+                                </a>
+                            </div>
+                        </nav> 
+                        <nav  class="navbar navbar-expand-lg navbar-light bg-primary">
+                            <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
+                                <div class="navbar-nav" >
+                                    <% if (!user){ %>
+                                    <a class="nav-item nav-link " onclick=" document.getElementById('login-wrapper').style.display='block'" style="display:block;" href="#">FEED </a>
+                                    <% } else { %>
+                                    <a class="nav-item nav-link " style="display:block;" href="/feed">FEED </a>
+                                    <% } %>
+                                    <a class="nav-item nav-link" href="/news">NEWS</a>
+                                    <a class="nav-item nav-link" href="/Explore">EXPLORE <span class="sr-only">(current)</span></a>
+                                    <a class="nav-item nav-link" href="/Gallery">GALLERY</a>
+                                </div>
+                            </div>            
+                        </nav>
+                    </nav>
+       <div>
+           <h1 class="top_head">Got Questions?</h1>
+       </div>
+       <div>
+        
+            <div class="topics">
+               <div> 
+                   <h3 style="font-weight: bold;margin: 2%; text-decoration: underline;margin-left: 12%;">Type of issues</h3>
+                   <div class="list_items">
+                       <li>Upload</li>
+                       <li>Share</li>
+                       <li>Edit</li>
+                       <li>Account</li>
+                       <li>Related</li>
+                       <li>Others</li>
+                       <li></li>
+                   </div>
+                </div>
+                <div> 
+                    <h3 style="font-weight: bold;margin: 2%; text-decoration: underline;margin-top: 12%; margin-left: 12%;">Help topics</h3>
+                    <div class="list_items">
+                        <li>Delete Account</li>
+                        <li>Delete Post</li>
+                        <li>Delete Account</li>
+                        <li>Manage Profile</li>
+                    </div>
+                </div>
+            </div>
+            <div class="inbox" style="background-color: dodgerblue;">
+                <form action="/Help" method="POST">
+                    <textarea type="text" name="fback" placeholder="Write a message"></textarea>
+                    <button type="submit" class="btn btn-primary" style="float: right;margin-right: 2%;border-radius: 40%;width: 12%; background-color: darkblue;">send</button>
+                </form>
+            </div>
+            <div class="inbox" style="margin-top: 8%;height: 39%;">
+                <h3 style="font-weight: bold;margin: 2%; text-decoration: underline;margin-top: 3%; margin-left: 5%;">Helpful Questions.</h3>
+                <div style="margin-left: 6%;">
+                    <h6> Ques:- Will my personal data be safe?</h6>
+                    <h6> Ans:- yes, all your personal data are secured and are non sharable.</h6>
+                    <h6> Ques:- Can I delete my account once it is created?</h6>
+                    <h6> Ans:- yes, you can delete it anytime you want.</h6>
+                </div>
+            </div>
+
+        </div>
+
+        <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
+          <ul class="nav" >
+              <li class="nav-item ">
+                <a class="nav-link" style="color: white;" href="/About">About</a>
+              </li>
+              <li class="nav-item" >
+                <a class="nav-link" style="color: white;" href="/Explore">Explore</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="color: white;" href="/Developers">Developers</a>
+              </li><li class="nav-item ">
+                  <a class="nav-link active" style="color: white;" href="#">Channels</a>
+                </li>
+                <li class="nav-item" >
+                  <a class="nav-link" style="color: white;" href="/Help">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" style="color: white;" href="#">Privacy</a>
+                </li>
+            </ul>
+            <ul class="justify-content-end">
+              <svg class="bi bi-arrow-up-square-fill sarrow"  style="margin-top: 12px;" width="2em" height="2em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
+                </svg>
+            </ul>
+        </nav>
+
+ <div id="login-wrapper" class="modal">
+    <span onclick="document.getElementById('login-wrapper').style.display='none'" class="close_login" title="Close Modal">&times;</span>
+   
+    <form class="modal-content" action="/feed" method="POST"  >
+        <div class="container1" style="height: 230px;">
+          <h3 class="syi">Share your idea</h3>
+          <br>
+          <input type="email" placeholder="Enter email" name="uemail" id="lemail" required>
+          <br>
+          <input type="password" placeholder="Enter Password" name="upassword" id="lp" required>
+          <br>
+          <button type="submit" class="signupbtn" style="margin-bottom: 15px; top: 77%; left: 35%;" onclick="regvalidate()">Create my space</button>
+        </div>
+        <h6 style="margin-top: 1px; position: absolute; top: 90%; left: 27%;">Not signed up yet?.. <a href="#" onclick="document.getElementById('login-wrapper').style.display='none' ,document.getElementById('Register-wrapper').style.display='block'">Sing Up</a> </h6>
+    </form> 
+    <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
+      <ul class="nav" >
+          <li class="nav-item ">
+            <a class="nav-link" style="color: white;" href="/About">About</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" style="color: white;" href="/Explore">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: white;" href="/Developers">Developers</a>
+          </li><li class="nav-item ">
+              <a class="nav-link active" style="color: white;" href="#">Channels</a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" style="color: white;" href="/Help">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: white;" href="#">Privacy</a>
+            </li>
+        </ul>
+        <ul class="justify-content-end">
+          <svg class="bi bi-arrow-up-square-fill sarrow"  style="margin-top: 12px;" width="2em" height="2em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
+            </svg>
+        </ul>
+    </nav>
+ </div>
+
+
+ <div id="Register-wrapper" class="modal">
+    <span onclick="document.getElementById('Register-wrapper').style.display='none'" class="close_login" title="Close Modal">&times;</span>
+    <form action="/" method="POST" class="modal-content" style="height: 350px;"  >
+        <div class="container1" >
+          <h3 class="syi">Register here</h3>
+          <br>
+          <input type="email" placeholder="Enter email" name="uremail" id="name" required>
+          <br>
+          <input type="password" placeholder="Enter Password" name="urpswd" id="p" required>
+          <br>
+          <input type="password" placeholder="Confirm Password" name="urcpswd" id="cp" required>
+          <br>
+          <button type="submit" class="signupbtn" style="margin-bottom: 10px; top: 77%;left: 40%;" onclick="regisvalidate()">Register here</button>
+        </div>
+        <h6 style="margin-top: 1px;margin-bottom: 10px; position: absolute; top: 88%; left: 27%;">Already singed up..? <a href="#" onclick="document.getElementById('login-wrapper').style.display='block' ,document.getElementById('Register-wrapper').style.display='none'">Sing In</a> </h6>
+    </form> 
+    <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
+      <ul class="nav" >
+          <li class="nav-item ">
+            <a class="nav-link" style="color: white;" href="/About">About</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" style="color: white;" href="/Explore">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: white;" href="/Developers">Developers</a>
+          </li><li class="nav-item ">
+              <a class="nav-link active" style="color: white;" href="#">Channels</a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" style="color: white;" href="/Help">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: white;" href="#">Privacy</a>
+            </li>
+        </ul>
+        <ul class="justify-content-end">
+          <svg class="bi bi-arrow-up-square-fill sarrow"  style="margin-top: 12px;" width="2em" height="2em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
+            </svg>
+        </ul>
+    </nav>
+ </div>
+         
+         <script>
+         // If user clicks anywhere outside of the modal, Modal will close
+         
+         var modal = document.getElementById('modal-wrapper');
+         window.onclick = function(event) {
+             if (event.target == modal) {
+                 modal.style.display = "none";
+             }
+         }
+         var modal = document.getElementById('login-wrapper');
+         window.onclick = function(event) {
+             if (event.target == modal) {
+                 modal.style.display = "none";
+             }
+         }
+
+         $(".sarrow").click(function() {
+  $("html, body").animate({ scrollTop: 0 }, "slow");
+  return false;
+});
+
+function regisvalidate(){
+    var password = document.getElementById("p").value;
+        var confirmPassword = document.getElementById("cp").value;
+        if (password != confirmPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+        return true;
+}
+
+
+         </script>
+         
+    </body>
+    </html>

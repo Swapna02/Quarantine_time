@@ -1,0 +1,572 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <STyle>
+           .msg{
+               text-align: center;
+                margin-top: 50;
+                margin-left: 100;
+                margin-right: 100;
+           }
+body{
+  background-image: url("https://github.com/Swapna02/Quartine-time/blob/master/public/images/bg2.jpg?raw=true");
+    background-repeat: no-repeat;
+    background-size:cover;
+
+}
+
+           * {
+  box-sizing: border-box;
+}
+input[type=email],[type=password] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid dodgerblue;
+  resize: vertical;
+  margin-left: 50px;
+  color: dodgerblue;
+  border-radius: 25px;
+}
+input[type=submit] {
+  background-color:dodgerblue;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+input[type=submit]:hover {
+  background-color: dodgerblue;
+}
+
+.container {
+  border-radius: 5px;
+  background-color:rgb(192, 195, 197);
+  padding: 20px;
+  width: 500px;
+  height: 300px;
+  margin-left: 150px;
+  margin-top: 150px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 300px) {
+  .col-75, input[type=submit] {
+    width: 50%;
+    margin-top: 0;
+  }
+}
+.imgtv{
+    background-color: rgb(41, 76, 104);
+    width: 100%;
+    margin-left: -20;
+    top: 32%;
+    position: absolute;
+    margin-bottom: 10;
+    margin-top: 10;
+}
+.imgsym{
+    width: 47%;
+    position: relative;
+    padding: 30px;
+    height: 400px;
+}
+.covidmsg{
+    position: absolute;
+    margin-top: 70;
+    width: 500;
+    float: right;
+    border-radius: 50%;
+    margin-right:827 ;
+    left: 230px;
+    background-color:rgb(228, 222, 252);
+}
+.tbmsg{
+    margin-top: 200px;
+    margin-left: 82px;
+}
+.btm_bar{
+    height: 30px;
+    color: azure;
+    font-size: 20px;
+}
+.syi{
+               text-align: center;
+               margin-top: 30px;
+               margin-left: -25;
+               margin-bottom: -30px;
+           }
+           .modal-content {
+               
+    background-color: rgb(0,0,0,0.6);
+    margin: 15% auto 15% auto;
+    border: 1px solid #888;
+    width: 30%; 
+    z-index: 1;
+	padding-bottom: 30px;
+    padding-top: -10;
+}
+.modal-content2 {
+               
+               background-color: rgb(0,50,50,0.7);
+               margin: 5% auto 15% auto;
+               border: 1px solid #888;
+               width: 35%; 
+               z-index: 1;
+             padding-bottom: 30px;
+               padding-top: -5;
+           }
+.signupbtn{
+    position: absolute;
+    right: 36%;
+    border: 0px;
+    color: white;
+    background-color: dodgerblue;
+    top: 80%;
+}
+
+div.modal input[type=text],div.modal input[type=password],div.modal input[type=tel] {
+    width: 80%;
+    padding: 10px 20px;
+    margin: 14px 26px 10px 4px;
+    margin-left: 25px;
+    border-radius: 25px;
+    display: inline-block;
+    border: 1.5px solid dodgerblue;
+    box-sizing: border-box;
+	font-size:16px;
+}
+
+.container2{
+  display:table;
+  padding:5px;
+  margin:70px;
+  margin-left: 100px;
+  width: 60%;
+  text-align: center;
+  margin-top: 25px;
+}
+.container1{
+  display:table;
+  padding:5px;
+  margin:20px;
+  margin-top: -20px;
+}
+.modal {
+	display:none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(52, 150, 101, 0.05);
+}
+/* For big zoom in img */
+.ovimg{
+    margin-top: 150px;
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 15.2%;
+    top: 10%;
+    color:white;
+    font-size: 35px;
+    font-weight: bold;
+}
+.close_login {
+    position: absolute;
+    right: 36.2%;
+    top: 42%;
+    z-index: 2;
+    font-weight: bold;
+    color:dodgerblue;
+    font-size: 35px;
+}
+.close:hover,.close:focus,.close_login:hover,.close_login:focus {
+    color: red;
+    cursor: pointer;
+}
+.img_container{
+  background-color: white;
+  border-radius: 180px;
+  width:250px;
+  height: 250px;
+  padding-bottom: 50px;
+  padding: 20px;
+  text-align: center;
+  margin-top: 10%;
+  margin-left: 25%;
+}
+.p_syi{
+  color: dodgerblue;
+  text-decoration: underline;
+  font-weight: 2px;
+  text-align: center;
+  font-size: 40px;
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding-top: 20px;
+}
+.edtp{
+  z-index: 1;
+  position: absolute;
+  top: 84.5%;
+  right: 41.5%;
+}
+.pbtn{margin-right: 20px;
+      margin-left: 20px;
+    border-radius: 16px;
+  padding: 7px;
+padding-left: 40px;
+padding-right: 40px;
+}
+.edit_it{
+  width:100%;
+  margin: 1.5px; 
+  margin-top: 15px; 
+  margin-bottom: -5px;
+  margin-left: -1px;
+  background-color: white;
+  border-radius: 25px;
+  padding: 10px;
+  text-align: left;
+  border: 1.5px solid dodgerblue;
+}
+        </STyle>
+    </head>
+    <body> 
+
+      <div id="profile-wrapper" class="modal" style="display: block;">
+        <nav class="navbar navbar-dark bg-primary">
+            <nav class="navbar navbar-dark bg-primary">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-nav" >
+                    <a class=" nav-item nav-link active  "  href="/">
+                    QURANTINE-TIME
+                    </a>
+                </div>
+            </nav> 
+            <nav  class="navbar navbar-expand-lg navbar-light bg-primary">
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
+                    <div class="navbar-nav" >
+                      <a class="nav-item nav-link"  href="/feed">FEED </a>
+                        <a class="nav-item nav-link" href="/news">NEWS</a>
+                        <a class="nav-item nav-link" href="/Explore">EXPLORE <span class="sr-only">(current)</span></a>
+                        <a class="nav-item nav-link" href="/Gallery">GALLERY</a>
+                        <a class="nav-item nav-link" href="/logout">Logout</a>
+                    </div>
+                </div>            
+            </nav>
+        </nav>
+    
+        <form class="modal-content2" style="height: 850px;"  >
+    
+              <div class="img_container">
+                <% if(things.image){ %>
+                  <img src="./uploads/<%= things.image %>" onclick="document.getElementById('modal-wrapper').style.display='block',document.getElementById('profile-wrapper').style.display='none', document.getElementById('Edit_profile-wrapper').style.display='none';" style="width: 155;height: 190px; margin-top:10px ;" id="img_containers_img" alt="">
+                  <% }else{ %>
+                    <img src="https://github.com/Swapna02/Quartine-time/blob/master/public/images/userdefpic.jpg?raw=true" onclick="document.getElementById('modal-wrapper').style.display='block',document.getElementById('profile-wrapper').style.display='none', document.getElementById('Edit_profile-wrapper').style.display='none';" style="width: 200px;height: 200px;" id="img_containers_img" alt="">
+                    <% } %>
+              </div>
+              <div >
+                <h3 class="p_syi" style="color: white; text-decoration: none; font-size: 20px;"><%= user %></h3>
+              </div>
+              <div class="container2">
+                <button type="button" class="btn btn-primary btn-sm btn-block" id="edit_my_profile" onclick="document.getElementById('profile-wrapper').style.display='none', document.getElementById('Edit_profile-wrapper').style.display='block'; " style="border-radius: 40px; padding: 5px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+                ;">EDIT MY PROFILE</button>
+                <% if(things.name){ %>
+                <label  class="edit_it" id="name" ><%= things.name %></label>
+                <% }else{ %>
+                <label  class="edit_it" id="name" >name</label>
+                <% } %>
+                <br>
+                <br>
+                <% if(things.mob !=''){ %>
+                <label  class="edit_it" id="mobile" ><%= things.mob %></label>
+                <% }else{ %>
+                  <label  class="edit_it" id="mobile" >mobile</label>
+                  <% } %>
+                <br>
+                <br>
+                <% if(things.add !=''){ %>
+                <label  class="edit_it" id="add" ><%= things.add %></label>
+                <% }else{ %>
+                  <label  class="edit_it" id="add" >Address</label>
+                  <% } %>
+                <br>
+                <br>
+                <% if(things.password !=''){ %>
+                <label  class="edit_it" id="password" ><%= things.password%></label>
+                <% }else{ %>
+                  <label  class="edit_it" id="password" >password</label>
+                  <% } %>
+                <br>
+                <br>
+                <% if(things.about !=''){ %>
+                <label  class="edit_it" id="aein" ><%= things.about %></label>
+                <% }else{ %>
+                <label  class="edit_it" id="aein" >About</label>
+                <% } %>
+                <br>
+                
+              </div>
+        </form>   
+        <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
+          <ul class="nav" >
+              <li class="nav-item ">
+                <a class="nav-link" style="color: white;" href="/About">About</a>
+              </li>
+              <li class="nav-item" >
+                <a class="nav-link" style="color: white;" href="/Explore">Explore</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="color: white;" href="/Developers">Developers</a>
+              </li><li class="nav-item ">
+                  <a class="nav-link active" style="color: white;" href="#">Channels</a>
+                </li>
+                <li class="nav-item" >
+                  <a class="nav-link" style="color: white;" href="/Help">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" style="color: white;" href="#">Privacy</a>
+                </li>
+            </ul>
+            <ul class="justify-content-end">
+              <svg class="bi bi-arrow-up-square-fill sarrow"  style="margin-top: 12px;" width="2em" height="2em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
+                </svg>
+            </ul>
+        </nav>
+    </div>                     
+    
+    
+    
+<div id="Edit_profile-wrapper" class="modal" style="display: none;">
+    <nav class="navbar navbar-dark bg-primary">
+        <nav class="navbar navbar-dark bg-primary">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-nav" >
+                <a class=" nav-item nav-link active  "  href="#">
+                QURANTINE-TIME
+                </a>
+            </div>
+        </nav> 
+        <nav  class="navbar navbar-expand-lg navbar-light bg-primary">
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
+                <div class="navbar-nav" >
+                  <a class="nav-item nav-link  " href="/">HOME </a>
+                  <a class="nav-item nav-link"  href="/feed">FEED </a>
+                    <a class="nav-item nav-link" href="/news">NEWS</a>
+                    <a class="nav-item nav-link" href="/Explore">EXPLORE <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="/logout">Logout</a>
+                </div>
+            </div>            
+        </nav>
+    </nav>
+   
+    <form class="modal-content2" action="/User_profile" method="POST" enctype="multipart/form-data" style="height: 900px;"  >
+      <span onclick="document.getElementById('Edit_profile-wrapper').style.display='none',document.getElementById('profile-wrapper').style.display='block'" class="close_login" title="Close Modal" style="top: 24%;right:34%">&times;</span>
+      <div >
+        <h3 class="p_syi">Edit your Profile</h3>
+      </div>    
+      <div class="img_container">
+        <img src="https://github.com/Swapna02/Quartine-time/blob/master/public/images/userdefpic.jpg?raw=true" id="Img_ask" onclick="document.getElementById('modal-wrapper').style.display='block',document.getElementById('profile-wrapper').style.display='none', document.getElementById('Edit_profile-wrapper').style.display='none';"
+        style="width: 155px;height: 180px;margin-top: 15px;margin-left: -3px;" name="selected_img"alt="">
+        <br>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+          <label for="image" style="margin-top: 10px;">
+            <input type="file" name="file" id="image" onChange="img_pathUrl(this);"  style="display:none;"/>
+            <img src="https://github.com/Swapna02/Quartine-time/blob/master/public/images/uploadImg.png?raw=true"  style="width: 35px;height: 25px; margin-left: 8px;"/>
+         </label>
+
+      </div>       
+          <div class="container2">
+            <button type="button" class="btn btn-primary btn-sm btn-block" id="edit_my_profile" onclick="window.location.href='/deleteAcc'" style="border-radius: 40px; padding: 5px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+                 ;margin-top: 10%;">DELETE MY PROFILE</button>
+           <br>
+            <br>
+            <input type="text" placeholder="MOBILE NO" style="width:100%; margin: 1.5px; margin-left: -1px;" name="mobile" id="mobile" >
+           <br>
+            <br>
+            <input type="text" placeholder="ADD" style="width:100%; margin: 1.5px; margin-left: -1px;" name="add" id="add" >
+           <br>
+            <br>
+            <input type="password" placeholder="PASSWORD" style="width:100%; margin: 1.5px; margin-left: -1px;" name="pass" id="pass" >
+            <br>
+            <br>
+            <input type="text" placeholder="ANYTHIG ELSE IF NEEDED" style="width:100%; margin: 1.5px; margin-left: -1px;" name="aein" id="aein">
+            <div style="margin-top: 30px;">
+                <button type="button" class="btn btn-primary btn-sm pbtn" onclick="document.getElementById('Edit_profile-wrapper').style.display='none', document.getElementById('profile-wrapper').style.display='block'">skip</button>
+                <button type="submit" class="btn btn-primary btn-sm pbtn">save</button>
+            </div>
+          </div>
+    </form> 
+    
+    <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
+      <ul class="nav" >
+          <li class="nav-item ">
+            <a class="nav-link" style="color: white;" href="/About">About</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" style="color: white;" href="/Explore">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: white;" href="/Developers">Developers</a>
+          </li><li class="nav-item ">
+              <a class="nav-link active" style="color: white;" href="#">Channels</a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" style="color: white;" href="/Help">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: white;" href="#">Privacy</a>
+            </li>
+        </ul>
+        <ul class="justify-content-end">
+          <svg class="bi bi-arrow-up-square-fill sarrow"  style="margin-top: 12px;" width="2em" height="2em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
+            </svg>
+        </ul>
+    </nav>
+</div>                     
+
+<!-- 
+<div id="modal-wrapper" class="modal">
+    <span onclick="document.getElementById('modal-wrapper').style.display='none',document.getElementById('Edit_profile-wrapper').style.display='none',document.getElementById('profile-wrapper').style.display='block'" class="close" title="Close Modal">&times;</span>
+   
+    <div class="media ovimg">
+        <img src="" class="align-self-center mr-3 bgv" 
+        alt="...">
+        <div class="media-body">
+        </div>
+    </div>
+
+    <div class="card w-75 " style="margin-left: 200;margin-bottom: 100px;">
+        <div class="media">
+            <img src="..." class="mr-3" alt="...">
+            <div class="media-body">
+              <h5 class="mt-0">Media heading</h5>
+              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            </div>
+          </div>
+      </div>
+</div>
+  -->
+
+          
+<!-- <div id="login-wrapper" class="modal">
+  <nav class="navbar navbar-dark bg-primary">
+    <nav class="navbar navbar-dark bg-primary">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-nav" >
+            <a class=" nav-item nav-link active  "  href="#">
+            QURANTINE-TIME
+            </a>
+        </div>
+    </nav> 
+    <nav  class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
+            <div class="navbar-nav" >
+              <a class="nav-item nav-link  " href="/">HOME </a>
+                <a class="nav-item nav-link " onclick="document.getElementById('login-wrapper').style.display='block',document.getElementById('profile-wrapper').style.display='none', document.getElementById('Edit_profile-wrapper').style.display='none';" style="display:block;" href="#">FEED </a>
+                <a class="nav-item nav-link" href="/news">NEWS</a>
+                <a class="nav-item nav-link" href="/Explore">EXPLORE <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="/User_profile">User Profile</a>
+            </div>
+        </div>            
+    </nav>
+</nav>
+
+    <span onclick="document.getElementById('login-wrapper').style.display='none',document.getElementById('Edit_profile-wrapper').style.display='none',document.getElementById('profile-wrapper').style.display='block', document.getElementById('Edit_profile-wrapper').style.display='none';"" class="close_login" title="Close Modal" style="top: ;">&times;</span>
+   
+    <form class="modal-content"   >
+        <div class="container1">
+          <h3 class="syi">Share your idea</h3>
+          <br>
+          <input type="text" placeholder="Enter Name" name="name" id="name" required>
+          <br>
+          <input type="password" placeholder="Enter Password" name="pswd" id="p" required>
+          <br>
+          <button type="button" class="signupbtn" onclick="regvalidate()">Create my space</button>
+        </div>
+    </form> 
+      <nav class="navbar sticky-bottom navbar-light bg-primary">
+        <ul class="nav" >
+            <li class="nav-item ">
+              <a class="nav-link" style="color: white; href="#">About</a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" style="color: white; href="#">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: white; href="#">Developers</a>
+            </li><li class="nav-item ">
+                <a class="nav-link active" style="color: white; href="#">Channels</a>
+              </li>
+              <li class="nav-item" >
+                <a class="nav-link" style="color: white; href="#">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="color: white; href="#">Privacy</a>
+              </li>
+              <ul class="nav justify-content-end" style="float: right;">
+                  <li style="float: right; margin-left: 1450px; margin-top: -35px;">
+                    <svg class="bi bi-arrow-up-square-fill" width="2em" height="2em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg" >
+                        <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
+                    </svg>
+                </li>
+              </ul>
+          </ul>
+      </nav>
+</div> -->
+ 
+        <script>
+         // If user clicks anywhere outside of the modal, Modal will close
+         
+         var modal = document.getElementById('modal-wrapper');
+         window.onclick = function(event) {
+             if (event.target == modal) {
+                 modal.style.display = "none";
+             }
+         }
+         var modal = document.getElementById('login-wrapper');
+         window.onclick = function(event) {
+             if (event.target == modal) {
+                 modal.style.display = "none";
+             }
+         }
+
+         function img_pathUrl(input){
+        $('#Img_ask')[0].src = (window.URL ? URL : webkitURL).createObjectURL(input.files[0]);
+    }
+         
+        </script>
+         
+
+    </body>
+</html>

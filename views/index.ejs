@@ -1,0 +1,883 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>     
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+
+
+init()
+
+      function init()
+      {
+       
+       var url ="https://covid19-update-api.herokuapp.com/api/v1/world"  
+        var news="https://covid19-us-api.herokuapp.com/news"
+        var postman_apiKey="PMAK-5f1e765ca62c960031454c6d-bebb1b166c9e88c075dea7818799d15acc"
+       var Countries_name =[]
+
+       
+       $.get(url,function(data)
+       {
+        
+         var colors=["crimson","red",'orange','gold','yellow','deepskyblue','dodgerblue','limegreen','lime','lawngreen']
+          
+        google.charts.load("current", {packages:['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+
+var datas = google.visualization.arrayToDataTable([
+["Element", "Cases", { role: "style" } ],
+[data.countries[0]['name'], data.countries[0]['cases'], colors[0]],
+[data.countries[1]['name'], data.countries[1]['cases'], colors[1]],
+[data.countries[2]['name'], data.countries[2]['cases'], colors[2]],
+[data.countries[3]['name'], data.countries[3]['cases'], colors[3]],
+[data.countries[4]['name'], data.countries[4]['cases'], colors[4]],
+[data.countries[5]['name'], data.countries[5]['cases'], colors[5]],
+[data.countries[6]['name'], data.countries[6]['cases'], colors[6]],
+[data.countries[7]['name'], data.countries[7]['cases'], colors[7]],
+[data.countries[8]['name'], data.countries[8]['cases'], colors[8]],
+[data.countries[9]['name'], data.countries[9]['cases'], colors[9]],
+]);
+
+         var view = new google.visualization.DataView(datas);
+view.setColumns([0, 1,
+               { calc: "stringify",
+                 sourceColumn: 1,
+                 type: "string",
+                 role: "annotation" },
+               2]);
+
+var options = {
+    backgroundColor: "rgb(206, 240, 250)",
+title: "TOP 10 HIGHEST COUNTING COUNTRIES",
+width: 519,
+height: 320,
+bar: {groupWidth: "60%"},
+legend: { position: "none"},
+};
+var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+chart.draw(view, options);
+         }
+
+        } ) 
+       
+      }
+
+      function states_cases()
+            {
+                var url2 = "https://api.covidindiatracker.com/state_data.json"
+                //var states='Delhi'
+                var states = prompt("Please enter your state", "");
+                
+                $.get(url2,function(state)
+       {
+            
+        //console.log(state);
+        var i;
+        for(i=0 ; i < state.length ; i++)
+        {
+            // console.log((state[i].state))
+            // console.log(states);
+            if((state[i].state.toUpperCase()) == (states.toUpperCase())){
+                //console.log(i);
+                
+                document.getElementById("state_cases").innerHTML =
+                    "CASES IN " + states.toUpperCase() ;
+                document.getElementById("cnfm").innerHTML =
+                      state[i].confirmed;
+                      document.getElementById("actv").innerHTML =
+                      state[i].active;
+                      document.getElementById("rcvr").innerHTML =
+                      state[i].recovered;
+                      document.getElementById("dth").innerHTML =
+                      state[i].deaths;
+                break;
+            }
+            else
+            {
+                document.getElementById("state_cases").innerHTML =
+                    "CASES IN YOUR STATE";
+                    //alert("Invalid state");
+                document.getElementById("cnfm").innerHTML =
+                      "";
+                      document.getElementById("actv").innerHTML =
+                      "";
+                      document.getElementById("rcvr").innerHTML =
+                      "";
+                      document.getElementById("dth").innerHTML =
+                      "";
+                
+            }
+            
+        }
+        
+
+           console.log(state[i].state);
+           console.log(state[i].confirmed);
+           console.log(state[i].active);
+           console.log(state[i].recovered);
+           console.log(state[i].deaths);
+       })
+
+               
+            }
+</script>
+
+        <STyle>
+           .msg{
+               text-align: center;
+                margin-top: 50;
+                margin-left: 100;
+                margin-right: 100;
+           }
+body{
+    background-image: url("https://github.com/Swapna02/Quartine-time/blob/master/public/images/background.jpg?raw=true");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+           * {
+  box-sizing: border-box;
+}
+input[type=email],[type=password] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid dodgerblue;
+  resize: vertical;
+  margin-left: 50px;
+  color: dodgerblue;
+  border-radius: 25px;
+}
+input[type=submit] {
+  background-color:dodgerblue;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+input[type=submit]:hover {
+  background-color: dodgerblue;
+}
+
+.container {
+  border-radius: 5px;
+  background-color:rgb(192, 195, 197);
+  padding: 20px;
+  width: 500px;
+  height: 300px;
+  margin-left: 150px;
+  margin-top: 150px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 300px) {
+  .col-75, input[type=submit] {
+    width: 50%;
+    margin-top: 0;
+  }
+}
+.imgtv{
+    background-color: rgb(41, 76, 104);
+    width: 100%;
+    margin-left: -20;
+    top: 32%;
+    position: absolute;
+    margin-bottom: 10;
+    margin-top: 10;
+}
+.imgsym{
+    width: 47%;
+    position: relative;
+    padding: 30px;
+    height: 400px;
+}
+.covidmsg{
+    position: absolute;
+    margin-top: 70;
+    width: 500;
+    float: right;
+    border-radius: 50%;
+    margin-right:827 ;
+    left: 230px;
+    background-color:rgb(228, 222, 252);
+}
+.img1{
+    position: absolute;
+    left: 60%;
+    top: 5%;
+    width: 500px;
+}
+.tbmsg{
+    margin-top: 200px;
+    margin-left: 82px;
+}
+.btn_type_cnfr{
+    position: absolute;
+    border-radius: 8px;
+    width: 120px;
+    height: 70px;
+    text-align: center;
+    top: 120%;
+    color: red;
+    z-index: 1;
+    left: 5%;
+    background-color:powderblue;
+}
+.imgsd{
+    position:absolute;
+    top: 72.5%;
+    z-index: 5;
+    left: 39%;
+    
+}
+.imgbar{
+    position: absolute;
+    float: right;
+    top: 70%;
+    left: 65%;
+    z-index: 6;
+}
+.btnss{
+    position: absolute;
+    top: 60%;
+    height: 20%;
+
+}
+.btn_type_actv{
+    position: absolute;
+    border-radius: 8px;
+    width: 80px;
+    height: 70px;
+    text-align: center;
+    z-index: 2;
+    top: 120%;
+    color:yellow;
+    left: 37.5%;
+    background-color:powderblue;
+}
+.btn_type_rcvrd{
+    position: absolute;
+    border-radius: 8px;
+    width: 110px;
+    height: 70px;
+    text-align: center;
+    top: 120%;
+    color:green;
+    left: 61%;
+    z-index: 3;
+    background-color:powderblue;
+}
+.btn_type_dth{
+    position: absolute;
+    z-index: 4;
+    border-radius: 8px;
+    width: 90px;
+    height: 70px;
+    text-align: center;
+    top: 120%;
+    color:black;
+    left: 90%;
+    background-color:powderblue;
+}
+.btm_bar{
+    height: 30px;
+    color: azure;
+    font-size: 20px;
+}
+.syi{
+               text-align: center;
+               margin-top: 30px;
+               margin-left: -25;
+               margin-bottom: -30px;
+           }
+           .modal-content {
+               
+    background-color: rgba(192, 229, 253, 0.9);
+    margin: 15% auto 15% auto;
+    border: 1px solid #888;
+    width: 30%; 
+    z-index: 1;
+	padding-bottom: 30px;
+    padding-top: -30;
+}
+.signupbtn{
+    position: absolute;
+    right: 36%;
+    border: 0px;
+    color: white;
+    background-color: dodgerblue;
+    top: 80%;
+}
+
+div.modal input[type=email],div.modal input[type=password],div.modal input[type=tel] {
+    width: 80%;
+    padding: 10px 20px;
+    margin: 14px 26px 10px 4px;
+    margin-left: 40px;
+    border-radius: 25px;
+    display: inline-block;
+    border: 1.5px solid dodgerblue;
+    box-sizing: border-box;
+	font-size:16px;
+}
+
+.container1{
+  display:table;
+  padding:5px;
+  margin:20px;
+  margin-top: -20px;
+}
+.modal {
+	display:none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+/* For big zoom in img */
+.ovimg{
+    margin-top: 150px;
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 15.2%;
+    top: 10%;
+    color:white;
+    font-size: 35px;
+    font-weight: bold;
+}
+.close_login {
+    position: absolute;
+    right: 36.2%;
+    top: 29%;
+    z-index: 2;
+    font-weight: bold;
+    color:dodgerblue;
+    font-size: 35px;
+}
+.close:hover,.close:focus,.close_login:hover,.close_login:focus {
+    color: red;
+    cursor: pointer;
+}
+.like_btn{
+    width: 30px;
+    height: 10px;
+    font-size: 10px;
+    padding: 2px;
+    margin-top: -12px;
+    border: white;
+    margin-right: 40px;
+}
+.like_btn:hover{
+    color: dodgerblue;
+    background-color: white;
+}
+
+        </STyle>
+    </head>
+    <body>
+
+                    <nav class="navbar navbar-dark bg-primary">
+                        <nav class="navbar navbar-dark bg-primary">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="navbar-nav" >
+                                <a class=" nav-item nav-link active  "  href="/">
+                                QUARANTINE-TIME
+                                </a>
+                            </div>
+                        </nav> 
+                        <nav  class="navbar navbar-expand-lg navbar-light bg-primary">
+                            <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
+                                <div class="navbar-nav" >
+                                    <% if (!user){ %>
+                                    <a class="nav-item nav-link " onclick=" document.getElementById('login-wrapper').style.display='block'" style="display:block;" href="#">FEED </a>
+                                    <% } else { %>
+                                    <a class="nav-item nav-link " style="display:block;" href="/feed">FEED </a>
+                                    <% } %>
+                                    <a class="nav-item nav-link" href="/news">NEWS</a>
+                                    <a class="nav-item nav-link" href="/Explore">EXPLORE <span class="sr-only">(current)</span></a>
+                                    <a class="nav-item nav-link" href="/Gallery">GALLERY</a>
+                                </div>
+                            </div>            
+                        </nav>
+                    </nav>
+                    <div class="msg">
+                        <h6>hello there!! are you bored of being qurantined? Meet new peoples with great ideas and make it chilled.</h6>
+                    </div>
+                    <div style="margin-top: 25; font-size: smaller;">
+                        <ul class="nav justify-content-center">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="/Explore">ALL</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Explore">FOOD</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Explore">ART</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Explore">CRAFT</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Explore">WORKOUT</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/Explore">OTHERS</a>
+                            </li>
+                      </ul>
+                </div>
+
+                <div class="card-deck" style="margin-left: 70;margin-right: 70;margin-top:30 ;">
+                    <% if(tl>0){ %>
+                        <% things.forEach(function (post){ %>
+                            <% if(l>0){ %>
+                    <div class="card">
+                        <div class="card-body">
+                            <nav class="navbar navbar-primary">
+                                <a class="navbar-brand" href="#">
+                                    <% if(post.userpic){ %>
+                                    <img src="./uploads/<%= post.userpic %>" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+                                    <% }else{ %>
+                                    <img src="https://github.com/Swapna02/Quartine-time/blob/master/public/images/userdefpic.jpg?raw=true" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+                                    <% } %>
+                                    <label for="usern" style="font-size:medium;"><%= post.username %></label>
+                                </a>    
+                                <div class="nothing">
+                                    <p class="text-muted" id="date" > <%= post.crDate %>  </p> 
+                                </div>
+                            </nav>
+                            <% if(post.info != ''){ %>
+                                <p class="card-text" style="font-size: 12;"  ><%= post.info %></p>
+                                <% }else{ %>
+                                    <p class="card-text" style="font-size: 12;"  >  </p>
+                                    <% } %>
+                            <% if(post.image != ''){ %>
+                                <img src="./uploads/<%= post.image %>" class="card-img-bottom" alt="..."width="200px" height="350px" onclick="window.location.href='posts/<%= post._id %>'">
+                                <% } %>
+                                <div style="margin-top: 15;margin-left: 2 ;">
+                                <svg class="bi bi-heart-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                    style="margin-right: 1;" onclick="window.location.href='/like/<%= post._id %>'" >
+                                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                                </svg>
+                                <button type="button" class="btn btn-outline-info like_btn"><%= post.likes %></button>
+                                <svg class="bi bi-chat-square-dots-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" onclick="window.location.href='comment/<%= post._id %>'" >
+                                  <path fill-rule="evenodd" d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2V2zm5 4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                                </svg>
+                                <button type="button" class="btn btn-outline-info like_btn"><%= post.comments %></button>
+                                <svg class="bi bi-reply-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="float: right;" onclick="window.location.href='share/<%= post._id %>'">
+                                    <path d="M9.079 11.9l4.568-3.281a.719.719 0 0 0 0-1.238L9.079 4.1A.716.716 0 0 0 8 4.719V6c-1.5 0-6 0-7 8 2.5-4.5 7-4 7-4v1.281c0 .56.606.898 1.079.62z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <% l--; } %>
+                    <% }) %>
+                <% } %>
+                
+                </div>
+                <div style="margin-top:70 ; text-align: center;">
+                    <button type="button" class="btn btn-outline-primary"  onclick="window.location.href='/Explore'">GET MORE IDEAS</button>
+                </div>
+                <div>
+                    <div style="float: right; margin-right: 200px;">
+                        <img src="https://github.com/Swapna02/Quartine-time/blob/master/public/images/3622890.jpg?raw=true" width="500" height="350" alt="" >
+                    </div>
+                    <div class="container">
+                        <form  action="/Explore" method="POST">
+                            <div class="msg" style="border-bottom-color: gray ;padding-left:20;padding-right: 20; margin-top: -1; color: grey; ">
+                                <u><h5>Share your idea</h5></u> 
+                            </div>
+                            <div class="row">
+                                <div class="col-75">
+                                    <input type="email" id="fname" name="uemail" placeholder=" email..">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-75" >
+                                    <input type="password" id="fpass" name="upassword" placeholder="password..">
+                                </div>
+                            </div>
+                            <div style="text-align: center; font-size: smaller;" >
+                                <input type="submit"  value="CREATE MY SPACE">
+                                
+                            </div>
+                            <div style="text-align: center; font-size: smaller;" ></div>    
+                                 <h6 style="margin-top: 9px; margin-left: 120px;">Not signed up yet?.. <a href="#" onclick="document.getElementById('login-wrapper').style.display='none' ,document.getElementById('Register-wrapper').style.display='block'">Sing Up</a> </h6>
+                            </div>        
+                        </form>
+                        
+                    </div>
+                   
+                </div>
+
+                <div class="card" style="margin-top: 70px; background-color:rgb(206, 240, 250); height: 1160;margin-left: 20;margin-right: 20;padding-bottom: -500px;"  >
+                    <div class="msg" style="color: dodgerblue; margin-top: 15;">
+                        <u><h6>Stay home,  Stay safe</h6></u>
+                    </div>
+                    <div class="card-body">
+                        <div class="card covidmsg">
+                            <div class="card-body">
+                                <h5 style="text-align: center;">COVID-19</h5>
+                                <h6 style="padding-left:40 ;">Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.</h6>
+                            </div>
+                        </div>
+                        <div style="position: absolute;">
+                            <img src="https://github.com/Swapna02/Quartine-time/blob/master/public/images/COVID-CHILD.png?raw=true" width="200" height="300" alt="" style="margin-left: 50px;" >
+                        </div>  
+                    </div>
+                
+                    <div style="margin-top: -10px;" >
+                            <img src="https://github.com/Swapna02/Quartine-time/blob/master/public/images/Screenshot.png?raw=true" class="img1" width="200" height="300" alt="" >
+                    </div>
+
+                    <div class="card-body">
+                        <div class="card imgtv ">
+                            <div >
+                                <img src="https://github.com/Swapna02/Quartine-time/blob/master/public/images/SYMPTOM.png?raw=true" width="200" height="300" alt="" class="imgsym">
+                            </div>
+                            <div >
+                                <img src="https://github.com/Swapna02/Quartine-time/blob/master/public/images/PRECAUTION.png?raw=true" width="200" height="300" alt="" class="imgsym" style="float: right;margin-top: -420;">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="btnss" style="margin-bottom: 70;">
+                        <div >
+                            <div class="tbmsg ">
+                                <b>
+                                    <h5>COVID 19 METER <label for="statecase" id="state_cases" onclick="states_cases()" >(CASES IN YOUR STATE)</label></h5>
+                                </b>
+                            </div>
+                            <div class="card-body">
+                                <div class="card btn_type_cnfr ">
+                                    <b> CONFIRMED</b>
+                                    <b id="cnfm"></b>
+                                </div>
+                            </div>    
+                            <div class="card-body">
+                                <div class="card btn_type_actv ">
+                                    <b> ACTIVE</b>
+                                    <b id="actv"></b>
+                                </div>
+                            </div>      
+                            <div class="card-body">                
+                                <div class="card btn_type_rcvrd ">
+                                    <b> RECOVERED</b>
+                                    <b id="rcvr"></b>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="card btn_type_dth ">
+                                    <b> DEATH</b>                   
+                                    <b id="dth"></b>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                        <div class="imgsd " >
+                            <img src="https://github.com/Swapna02/Quartine-time/blob/master/public/images/SOCIAL%20DISTANCE.png?raw=true" alt="" height="320px" width="370px">
+                          </div>
+                          <div class="imgbaRr " >
+                            <div id="columnchart_values" style="width: 50px; height: 300px;position: relative ; left: 65%; bottom: 10%;"></div>        
+                          </div>
+                    
+                </div>
+
+                <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
+                    <ul class="nav" >
+                        <li class="nav-item ">
+                          <a class="nav-link" style="color: white;" href="/About">About</a>
+                        </li>
+                        <li class="nav-item" >
+                          <a class="nav-link" style="color: white;" href="/Explore">Explore</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" style="color: white;" href="/Developers">Developers</a>
+                        </li><li class="nav-item ">
+                            <a class="nav-link active" style="color: white;" href="#">Channels</a>
+                          </li>
+                          <li class="nav-item" >
+                            <a class="nav-link" style="color: white;" href="#">Contact</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" style="color: white;" href="#">Privacy</a>
+                          </li>
+                      </ul>
+                      <ul class="justify-content-end">
+                        <svg class="bi bi-arrow-up-square-fill sarrow"  style="margin-top: 12px;" width="2em" height="2em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
+                          </svg>
+                      </ul>
+                  </nav>
+
+                           
+<!-- <div id="modal-wrapper" class="modal">
+    <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close Modal">&times;</span>
+   
+    <div class="media ovimg">
+        <% if(tl>0){ %>
+        <img src="./uploads/<%= things[0].image %>" class="align-self-center mr-3 bgv" 
+        alt="...">
+        <% } %>
+        <div class="media-body">
+        </div>
+    </div>
+
+    <div class="card w-75 " style="margin-left: 200;margin-bottom: 100px;">
+        <div class="media">
+            <img src="..." class="mr-3" alt="...">
+            <div class="media-body">
+                <% if(tl>0){ %>
+              <h5 class="mt-0"><%= things[0].info %></h5>
+              <% } %>
+            </div>
+          </div>
+      </div> -->
+      
+      <!-- <nav class="navbar sticky-bottom navbar-light bg-primary">
+        <ul class="nav" >
+            <li class="nav-item ">
+              <a class="nav-link" style="color: white; href="#">About</a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" style="color: white; href="#">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: white; href="#">Developers</a>
+            </li><li class="nav-item ">
+                <a class="nav-link active" style="color: white; href="#">Channels</a>
+              </li>
+              <li class="nav-item" >
+                <a class="nav-link" style="color: white; href="#">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="color: white; href="#">Privacy</a>
+              </li>
+              <ul class="nav justify-content-end" style="float: right;">
+                  <li style="float: right; margin-left: 1450px; margin-top: -35px;">
+                    <svg class="bi bi-arrow-up-square-fill sarrow" width="2em" height="2em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg" >
+                        <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
+                    </svg>
+                </li>
+              </ul>
+          </ul>
+      </nav> -->
+ <!-- </div> -->
+ 
+
+          
+<!-- <div id="login-wrapper" class="modal">
+    <span onclick="document.getElementById('login-wrapper').style.display='none'" class="close_login" title="Close Modal">&times;</span>
+   
+    <form class="modal-content"  action="/Explore" >
+        <div class="container1">
+          <h3 class="syi">Share your idea</h3>
+          <br>
+          <input type="text" placeholder="Enter Name" name="uname" id="name" required>
+          <br>
+          <input type="password" placeholder="Enter Password" name="upswd" id="p" required>
+          <br>
+          <button type="submit" class="signupbtn" >Create my space</button>
+        </div>
+    </form> 
+      <nav class="navbar sticky-bottom navbar-light bg-primary">
+        <ul class="nav" >
+            <li class="nav-item ">
+              <a class="nav-link" style="color: white; href="#">About</a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" style="color: white; href="#">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: white; href="#">Developers</a>
+            </li><li class="nav-item ">
+                <a class="nav-link active" style="color: white; href="#">Channels</a>
+              </li>
+              <li class="nav-item" >
+                <a class="nav-link" style="color: white; href="#">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="color: white; href="#">Privacy</a>
+              </li>
+              <ul class="nav justify-content-end" style="float: right;">
+                  <li style="float: right; margin-left: 1450px; margin-top: -35px;">
+                    <svg class="bi bi-arrow-up-square-fill sarrow" width="2em" height="2em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg" >
+                        <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
+                    </svg>
+                </li>
+              </ul>
+          </ul>
+      </nav>
+ </div> -->
+<!--  -->
+<% if(msg !=''){ %> 
+<div id="msg-wrapper" class="modal" style="display: block;" >
+    <span onclick="window.location.href='/'" class="close_login" style="color: black; margin-right: 15px;" title="Close Modal">&times;</span>
+   <div class="modal-content" style="background-color:unset;">
+    <div class="container1" style=" height: 130px;border: 1px solid dodgerblue; margin-top: -5px; background-color: rgb(206, 240, 250); ">
+        <h3 style="background-color:dodgerblue;padding: 4px;">Alert message</h3>
+        
+        <h6 ><%= msg %></h6>
+        
+      </div>
+   </div>
+     </div>
+     <% } %> 
+
+
+ <div id="login-wrapper" class="modal">
+    <span onclick="document.getElementById('login-wrapper').style.display='none'" class="close_login" title="Close Modal">&times;</span>
+   
+    <form class="modal-content" action="/feed" method="POST"  >
+        <div class="container1" style="height: 230px;">
+          <h3 class="syi">Share your idea</h3>
+          <br>
+          <input type="email" placeholder="Enter email" name="uemail" id="lemail" required>
+          <br>
+          <input type="password" placeholder="Enter Password" name="upassword" id="lp" required>
+          <br>
+          <button type="submit" class="signupbtn" style="margin-bottom: 15px; top: 77%; left: 35%;" onclick="regvalidate()">Create my space</button>
+        </div>
+        <h6 style="margin-top: 1px; position: absolute; top: 90%; left: 27%;">Not signed up yet?.. <a href="#" onclick="document.getElementById('login-wrapper').style.display='none' ,document.getElementById('Register-wrapper').style.display='block'">Sing Up</a> </h6>
+    </form> 
+    <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
+        <ul class="nav" >
+            <li class="nav-item ">
+              <a class="nav-link" style="color: white;" href="/About">About</a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" style="color: white;" href="/Explore">Explore</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: white;" href="/Developers">Developers</a>
+            </li><li class="nav-item ">
+                <a class="nav-link active" style="color: white;" href="#">Channels</a>
+              </li>
+              <li class="nav-item" >
+                <a class="nav-link" style="color: white;" href="#">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="color: white;" href="#">Privacy</a>
+              </li>
+          </ul>
+          <ul class="justify-content-end">
+            <svg class="bi bi-arrow-up-square-fill sarrow"  style="margin-top: 12px;" width="2em" height="2em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
+              </svg>
+          </ul>
+      </nav>
+ </div>
+
+
+ <div id="Register-wrapper" class="modal">
+    <span onclick="document.getElementById('Register-wrapper').style.display='none'" class="close_login" title="Close Modal">&times;</span>
+    <form action="/" method="POST" class="modal-content" style="height: 350px;"  >
+        <div class="container1" >
+          <h3 class="syi">Register here</h3>
+          <br>
+          <input type="email" placeholder="Enter email" name="uremail" id="name" required>
+          <br>
+          <input type="password" placeholder="Enter Password" name="urpswd" id="p" required>
+          <br>
+          <input type="password" placeholder="Confirm Password" name="urcpswd" id="cp" required>
+          <br>
+          <button type="submit" class="signupbtn" style="margin-bottom: 10px; top: 77%;left: 40%;" onclick="regisvalidate()">Register here</button>
+        </div>
+        <h6 style="margin-top: 1px;margin-bottom: 10px; position: absolute; top: 88%; left: 27%;">Already singed up..? <a href="#" onclick="document.getElementById('login-wrapper').style.display='block' ,document.getElementById('Register-wrapper').style.display='none'">Sing In</a> </h6>
+    </form> 
+    <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
+        <ul class="nav" >
+            <li class="nav-item ">
+              <a class="nav-link" style="color: white;" href="/About">About</a>
+            </li>
+            <li class="nav-item" >
+              <a class="nav-link" style="color: white;" href="/Explore">Explore</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: white;" href="/Developers">Developers</a>
+            </li><li class="nav-item ">
+                <a class="nav-link active" style="color: white;" href="#">Channels</a>
+              </li>
+              <li class="nav-item" >
+                <a class="nav-link" style="color: white;" href="#">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="color: white;" href="#">Privacy</a>
+              </li>
+          </ul>
+          <ul class="justify-content-end">
+            <svg class="bi bi-arrow-up-square-fill sarrow"  style="margin-top: 12px;" width="2em" height="2em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
+              </svg>
+          </ul>
+      </nav>
+ </div>
+
+
+         
+         <script>
+         // If user clicks anywhere outside of the modal, Modal will close
+         
+         var modal = document.getElementById('modal-wrapper');
+         window.onclick = function(event) {
+             if (event.target == modal) {
+                 modal.style.display = "none";
+             }
+         }
+         var modal = document.getElementById('login-wrapper');
+         window.onclick = function(event) {
+             if (event.target == modal) {
+                 modal.style.display = "none";
+             }
+         }
+
+         $(".sarrow").click(function() {
+  $("html, body").animate({ scrollTop: 0 }, "slow");
+  return false;
+});
+
+function regisvalidate(){
+    var password = document.getElementById("p").value;
+        var confirmPassword = document.getElementById("cp").value;
+        if (password != confirmPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+        return true;
+}
+
+
+         </script>
+         
+
+    </body>
+    </html>

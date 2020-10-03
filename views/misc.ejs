@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<style>
+			.con_img
+        	{
+        		height: 10em;
+        		width: 20em;
+        	}
+@font-face {
+    font-family: 'LeagueGothic';
+    src: url('fonts/League_Gothic-webfont.eot');
+    src: url('fonts/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/League_Gothic-webfont.woff') format('woff'),
+         url('fonts/League_Gothic-webfont.ttf') format('truetype'),
+         url('fonts/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SourceSansProLight';
+    src: url('fonts/SourceSansPro-Light-webfont.eot');
+    src: url('fonts/SourceSansPro-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/SourceSansPro-Light-webfont.woff') format('woff'),
+         url('fonts/SourceSansPro-Light-webfont.ttf') format('truetype'),
+         url('fonts/SourceSansPro-Light-webfont.svg#SourceSansProLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+img{
+	border: none;
+}
+
+body{
+	font-family: SourceSansProLight, Verdana, Arial, sans-serif;
+	font-size: 14px;
+}
+
+
+
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(images/Preloader_3.gif) center no-repeat #fff;
+}
+
+
+header h1, nav, nav li{
+	display: inline-block;
+}
+header{
+	background-color: dodgerblue;
+	height: 50px;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	box-shadow: 0px 0px 10px rgba(0,0,0,.8);
+	z-index: 100;
+	border-bottom: 0px solid #C10021;
+}
+header h1 a{
+	font-family: LeagueGothic, Verdana, Arial, sans-serif;
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: normal;
+	font-size: 28px;
+	position:absolute;
+	top:8px;
+	left: 35px;
+}
+header h2 a{
+	font-family: LeagueGothic, Verdana, Arial, sans-serif;
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: normal;
+	font-size: 20px;
+	position:absolute;
+	top:10px;
+	left: 35px;
+}
+#version{
+	color: white;
+	font-size: 10px;
+	position: relative;
+	top: 12px;
+	left: 122px;
+}
+nav{
+	position: absolute;
+	top: 32.8%;
+	left: 12.5%;
+}
+nav li a{
+	color: white;
+	text-decoration: none;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 13px;
+	margin-right: 12px;
+	padding: 5px;
+}
+nav li a:hover{
+	background-color: #383838;
+	border-radius: 3px;
+}
+.current{
+	background-color: #383838;
+	border-radius: 3px;
+}
+#adbanner{
+	margin-top: 100px;
+	
+	background-color: #dbdbdb;
+	border-bottom: 1px solid #c3c3c3;
+
+}
+#ad{
+	width: 100%;
+	position: relative;
+	left: 10%;
+	
+}
+
+#adbanner a:hover{
+	
+	/*text-decoration: underline;*/
+	color: #3f3f3f;
+	background-color: #cacaca;
+}
+#adbanner a p{
+	text-align: center;
+	margin-top: 35px;
+}
+#ad ul li
+{
+	display: inline-block;
+	padding: 20px;
+}
+#ad ul li a
+{
+	text-decoration: none;
+	color: #000;
+	font-weight: 500;
+	font-style: 'Arial',sans-serif;
+	font-size: 1.2em;
+}
+section{
+	width: 100%;
+	margin: auto;
+}
+#secwrapper{
+	/*background: url('images/bg.gif') fixed;
+	background-color: #f47771;*/ 
+	padding-top: 20px; 
+	width: 100%;
+	padding-left: 10em;
+}
+article{
+	width: 280px;
+	margin-right: 40px;
+	display: inline-block;
+	vertical-align: top;
+	border: 1px solid #c8c8c8;
+	margin-bottom: 20px;
+	padding: 7px;
+	border-radius: 3px;
+	box-shadow: 0 2px 3px #ccc;
+	background-color: white;
+	*display:inline;
+    zoom:1;
+}
+
+.readmore{
+	background-color: black;
+	padding: 5px 10px;
+	color: white;
+	text-decoration: none;
+	border-radius: 3px;
+	display: inline-block;
+}
+.readmore:hover{
+	background-color: #383838;
+}
+article p{
+	margin-bottom: 7px;
+}
+article h1
+{
+	font-family: 'Inter', sans-serif;
+	font-weight: 600;
+}
+#photobox img{
+	margin: 5px 4px 6px 6.5px;
+	border: 1px solid black;
+}
+#sponsors a{
+	color: #6b6b6b;
+	text-decoration: none;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 14px;
+	background-color: #d1d1d1;
+	width: 125px;
+	height: 125px;
+	display: inline-block;
+	margin: 5px 4px 6px 7px;
+	border: 1px solid #c3c3c3; 
+}
+#sponsors a p{
+	margin: 50px auto;
+	width: 125px;
+	text-align: center;
+}
+#sponsors a:hover{
+	border: 1px solid #a7a7a7;
+	/*text-decoration: underline;*/
+	color: #3f3f3f;
+	background-color: #cacaca;
+}
+#featured{
+	position: relative;
+}
+#featuredico{
+	position: absolute;
+	top: 0em;
+	left: 0;
+}
+
+footer{
+	background-color: black;
+	height: 28px;
+	color: white;
+	padding: 7px;
+}
+footer p{
+	margin: 5px 0 0 12%;
+}
+
+.old_ie header h1, .old_ie nav, .old_ie nav li, .old_ie #adbanner a, .old_ie article, .old_ie .readmore, .old_ie #sponsors a {
+    display: inline;
+    zoom: 1;
+}
+
+
+		</style>
+        <meta charset="utf-8" />
+        
+        <link rel="stylesheet" href="style.css" />
+        
+        <title>News Box </title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+        <script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> 
+	</script> 
+        <script>
+
+
+			fetch('https://inshortsv2.vercel.app/topic/miscellaneous/40')
+						.then(function(res)
+						   {
+							return (res.json());
+						   }
+							)
+						.then(function(data)
+							{
+								console.log(data);
+							  //console.log(data.data[1]);
+							  console.log(data.articles.length);
+							  var len =data.articles.length;
+							  temp ="";
+							  for(var i=0; i<len;i++)
+							  {
+								var title = data.articles[i].title;
+								var img =data.articles[i].image_url;
+								var desc =data.articles[i].description;
+								var link =data.articles[i].source_url;
+								  temp += "   <article id='featured'>";
+					  
+					  temp +="<a href='#'><img src="+img+" class='con_img' alt=''/></a>";
+					  
+					  temp +="<h1>"+title+"</h1>";
+					  temp +="<p>"+desc+"</p>";
+					  temp +="<a href="+link+" class='readmore' target='blank'>Read more</a>";
+					  temp +="</article>";
+							  }
+							  document.getElementById("contn").innerHTML=temp;
+							}
+						  );
+			</script>
+        <style type="text/css">
+        	.con_img
+        	{
+        		height: 10em;
+        		width: 20em;
+        	}
+			body{background-color:rgba(51, 52, 58, 0.87);}
+        </style>
+    <script type="text/javascript">
+        	 $(window).on('load',function() {
+    // Animate loader off screen
+    $(".se-pre-con").fadeOut("slow");;
+  });
+        </script>
+    </head>
+    <body>
+    	<!--loader-->
+ <div class="se-pre-con"></div>
+ <!--/Loader End-->
+	<header>
+		<h1><a href="/">QUARANTINE-TIME </a><span id="version"></span></h1>
+			
+		<% if (!user){ %>
+			<h2><a href="/" style="display:block;margin-left: 75%;">FEED </a><span id="version"></span></h2>
+			<% } else { %>
+			<h2><a href="/feed" style="display:block;margin-left: 75%;">FEED </a><span id="version"></span></h2>
+			<% } %>
+			<h2><a  href="/news"style="margin-left: 79%;">NEWS</a><span id="version"></span></h2>
+			<h2><a  href="/Explore"style="margin-left: 83.5%;">EXPLORE </a><span id="version"></span></h2>
+			<h2><a href="/Gallery"style="margin-left: 90%;">GALLERY</a><span id="version"></span></h2>
+			<nav ></nav>
+		</header>
+		<div id="adbanner">
+			<div id="ad">
+				<ul><li><a href="/news">National</a></li>
+					<li><a href="/world">World</a></li>
+					<li><a href="/sports">Sports</a></li>
+					<li><a href="/politics">Politics</a></li>
+					<li><a href="/ente">Entertainment</a></li>
+					<li><a href="/edu">Education</a></li>
+					<li><a href="/science">Science</a></li>
+					<li><a href="/travel">Travel</a></li>
+					<li><a href="/misc">Miscellaneous</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="secwrapper">
+			<section id="contn">
+			
+				
+			</section>
+		</div>
+		<!-- <footer>
+			<p>Copyright &copy 2020</p>
+		</footer> -->
+	</body>
+</html>
+		
+		
+			
+    
+    

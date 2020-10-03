@@ -13,7 +13,7 @@
                 margin-right: 100;
            }
 body{
-    background-image: url("https://github.com/Swapna02/Quartine-time/blob/master/public/images/bg2.jpg?raw=true");
+    background-image: url("https://github.com/Swapna02/Quarantine_time/blob/master/public/images/bg2.jpg?raw=true");
     background-repeat: no-repeat;
     background-size:cover;
 
@@ -271,32 +271,21 @@ div.modal input[type=text],div.modal input[type=password],div.modal input[type=t
                 </a>
             </div>
         </nav> 
-        <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
-          <ul class="nav" >
-              <li class="nav-item ">
-                <a class="nav-link" style="color: white;" href="/About">About</a>
-              </li>
-              <li class="nav-item" >
-                <a class="nav-link" style="color: white;" href="/Explore">Explore</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" style="color: white;" href="/Developers">Developers</a>
-              </li><li class="nav-item ">
-                  <a class="nav-link active" style="color: white;" href="#">Channels</a>
-                </li>
-                <li class="nav-item" >
-                  <a class="nav-link" style="color: white;" href="#">Contact</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" style="color: white;" href="#">Privacy</a>
-                </li>
-            </ul>
-            <ul class="justify-content-end">
-              <svg class="bi bi-arrow-up-square-fill sarrow"  style="margin-top: 12px;" width="2em" height="2em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
-                </svg>
-            </ul>
-        </nav>
+        <nav  class="navbar navbar-expand-lg navbar-light bg-primary">
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
+              <div class="navbar-nav" >
+                  <!-- <a class="nav-item nav-link  " href="/">HOME </a> -->
+                  <% if (!user){ %>
+                      <a class="nav-item nav-link " onclick=" document.getElementById('login-wrapper').style.display='block'" style="display:block;" href="#">FEED </a>
+                      <% } else { %>
+                      <a class="nav-item nav-link active" style="display:block;" href="/feed">FEED </a>
+                      <% } %>
+                  <a class="nav-item nav-link" href="/news">NEWS</a>
+                  <a class="nav-item nav-link " href="/Explore">EXPLORE <span class="sr-only">(current)</span></a>
+                  <a class="nav-item nav-link" href="/Gallery">GALLERY</a>
+              </div>
+          </div>            
+      </nav>
     </nav>
 
    
@@ -349,15 +338,13 @@ div.modal input[type=text],div.modal input[type=password],div.modal input[type=t
             <a class="nav-link" style="color: white;" href="/Explore">Explore</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" style="color: white;" href="/Developers">Developers</a>
-          </li><li class="nav-item ">
-              <a class="nav-link active" style="color: white;" href="#">Channels</a>
-            </li>
+            <a class="nav-link" style="color: white;" href="/Developer">Developers</a>
+          </li>
             <li class="nav-item" >
-              <a class="nav-link" style="color: white;" href="#">Contact</a>
+              <a class="nav-link" style="color: white;" href="/Help">Help</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style="color: white;" href="#">Privacy</a>
+              <a class="nav-link" style="color: white;" href="/Privacy">Privacy</a>
             </li>
         </ul>
         <ul class="justify-content-end">

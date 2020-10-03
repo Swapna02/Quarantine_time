@@ -10,7 +10,7 @@
                 margin-right: 100;
            }
 body{
-  background-image: url("https://github.com/Swapna02/Quartine-time/blob/master/public/images/bg2.jpg?raw=true");
+  background-image: url("https://github.com/Swapna02/Quarantine_time/blob/master/public/images/bg2.jpg?raw=true");
     background-repeat: no-repeat;
     background-size:cover;
 
@@ -286,7 +286,7 @@ padding-right: 40px;
                 <% if(things.image){ %>
                   <img src="./uploads/<%= things.image %>" onclick="document.getElementById('modal-wrapper').style.display='block',document.getElementById('profile-wrapper').style.display='none', document.getElementById('Edit_profile-wrapper').style.display='none';" style="width: 155;height: 190px; margin-top:10px ;" id="img_containers_img" alt="">
                   <% }else{ %>
-                    <img src="https://github.com/Swapna02/Quartine-time/blob/master/public/images/userdefpic.jpg?raw=true" onclick="document.getElementById('modal-wrapper').style.display='block',document.getElementById('profile-wrapper').style.display='none', document.getElementById('Edit_profile-wrapper').style.display='none';" style="width: 200px;height: 200px;" id="img_containers_img" alt="">
+                    <img src="https://github.com/Swapna02/Quarantine_time/blob/master/public/images/userdefpic.jpg?raw=true" onclick="document.getElementById('modal-wrapper').style.display='block',document.getElementById('profile-wrapper').style.display='none', document.getElementById('Edit_profile-wrapper').style.display='none';" style="width: 200px;height: 200px;" id="img_containers_img" alt="">
                     <% } %>
               </div>
               <div >
@@ -341,15 +341,13 @@ padding-right: 40px;
                 <a class="nav-link" style="color: white;" href="/Explore">Explore</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" style="color: white;" href="/Developers">Developers</a>
-              </li><li class="nav-item ">
-                  <a class="nav-link active" style="color: white;" href="#">Channels</a>
-                </li>
+                <a class="nav-link" style="color: white;" href="/Developer">Developers</a>
+              </li>
                 <li class="nav-item" >
-                  <a class="nav-link" style="color: white;" href="/Help">Contact</a>
+                  <a class="nav-link" style="color: white;" href="/Help">Help</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" style="color: white;" href="#">Privacy</a>
+                  <a class="nav-link" style="color: white;" href="/Privacy">Privacy</a>
                 </li>
             </ul>
             <ul class="justify-content-end">
@@ -393,13 +391,13 @@ padding-right: 40px;
         <h3 class="p_syi">Edit your Profile</h3>
       </div>    
       <div class="img_container">
-        <img src="https://github.com/Swapna02/Quartine-time/blob/master/public/images/userdefpic.jpg?raw=true" id="Img_ask" onclick="document.getElementById('modal-wrapper').style.display='block',document.getElementById('profile-wrapper').style.display='none', document.getElementById('Edit_profile-wrapper').style.display='none';"
+        <img src="https://github.com/Swapna02/Quarantine_time/blob/master/public/images/userdefpic.jpg?raw=true" id="Img_ask" onclick="document.getElementById('modal-wrapper').style.display='block',document.getElementById('profile-wrapper').style.display='none', document.getElementById('Edit_profile-wrapper').style.display='none';"
         style="width: 155px;height: 180px;margin-top: 15px;margin-left: -3px;" name="selected_img"alt="">
         <br>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
           <label for="image" style="margin-top: 10px;">
             <input type="file" name="file" id="image" onChange="img_pathUrl(this);"  style="display:none;"/>
-            <img src="https://github.com/Swapna02/Quartine-time/blob/master/public/images/uploadImg.png?raw=true"  style="width: 35px;height: 25px; margin-left: 8px;"/>
+            <img src="https://github.com/Swapna02/Quarantine_time/blob/master/public/images/uploadImg.png?raw=true"  style="width: 35px;height: 25px; margin-left: 8px;"/>
          </label>
 
       </div>       
@@ -434,15 +432,13 @@ padding-right: 40px;
             <a class="nav-link" style="color: white;" href="/Explore">Explore</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" style="color: white;" href="/Developers">Developers</a>
-          </li><li class="nav-item ">
-              <a class="nav-link active" style="color: white;" href="#">Channels</a>
-            </li>
+            <a class="nav-link" style="color: white;" href="/Developer">Developers</a>
+          </li>
             <li class="nav-item" >
-              <a class="nav-link" style="color: white;" href="/Help">Contact</a>
+              <a class="nav-link" style="color: white;" href="/Help">Help</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style="color: white;" href="#">Privacy</a>
+              <a class="nav-link" style="color: white;" href="/Privacy">Privacy</a>
             </li>
         </ul>
         <ul class="justify-content-end">

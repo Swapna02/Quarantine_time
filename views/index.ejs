@@ -135,7 +135,7 @@ chart.draw(view, options);
                 margin-right: 100;
            }
 body{
-    background-image: url("https://github.com/Swapna02/Quartine-time/blob/master/public/images/background.jpg?raw=true");
+    background-image: url("https://github.com/Swapna02/Quarantine_time/blob/master/public/images/background.jpg?raw=true");
     background-repeat: no-repeat;
     background-size: contain;
 }
@@ -435,22 +435,22 @@ div.modal input[type=email],div.modal input[type=password],div.modal input[type=
                     <div style="margin-top: 25; font-size: smaller;">
                         <ul class="nav justify-content-center">
                             <li class="nav-item">
-                                <a class="nav-link active" href="/Explore">ALL</a>
+                                <a class="nav-link active" href="/Categories/ALL">ALL</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/Explore">FOOD</a>
+                                <a class="nav-link" href="/Categories/FOOD">FOOD</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/Explore">ART</a>
+                                <a class="nav-link" href="/Categories/ART">ART</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/Explore">CRAFT</a>
+                                <a class="nav-link" href="/Categories/CRAFT">CRAFT</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/Explore">WORKOUT</a>
+                                <a class="nav-link" href="/Categories/WORKOUT">WORKOUT</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/Explore">OTHERS</a>
+                                <a class="nav-link" href="/Categories/OTHERS">OTHERS</a>
                             </li>
                       </ul>
                 </div>
@@ -462,20 +462,20 @@ div.modal input[type=email],div.modal input[type=password],div.modal input[type=
                     <div class="card">
                         <div class="card-body">
                             <nav class="navbar navbar-primary">
-                                <a class="navbar-brand" href="#">
+                                <a class="navbar-brand" style="margin-left: -22px;" href="#">
                                     <% if(post.userpic){ %>
                                     <img src="./uploads/<%= post.userpic %>" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
                                     <% }else{ %>
-                                    <img src="https://github.com/Swapna02/Quartine-time/blob/master/public/images/userdefpic.jpg?raw=true" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+                                    <img src="https://github.com/Swapna02/Quarantine_time/blob/master/public/images/userdefpic.jpg?raw=true" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
                                     <% } %>
                                     <label for="usern" style="font-size:medium;"><%= post.username %></label>
                                 </a>    
                                 <div class="nothing">
-                                    <p class="text-muted" id="date" > <%= post.crDate %>  </p> 
+                                    <p class="text-muted" id="date" style="font-size: 14px;" > <%= post.crDate %>  </p> 
                                 </div>
                             </nav>
                             <% if(post.info != ''){ %>
-                                <p class="card-text" style="font-size: 12;"  ><%= post.info %></p>
+                                <p class="card-text" style="font-size: 11;"  ><%= post.info %></p>
                                 <% }else{ %>
                                     <p class="card-text" style="font-size: 12;"  >  </p>
                                     <% } %>
@@ -508,7 +508,7 @@ div.modal input[type=email],div.modal input[type=password],div.modal input[type=
                 </div>
                 <div>
                     <div style="float: right; margin-right: 200px;">
-                        <img src="https://github.com/Swapna02/Quartine-time/blob/master/public/images/3622890.jpg?raw=true" width="500" height="350" alt="" >
+                        <img src="https://github.com/Swapna02/Quarantine_time/blob/master/public/images/3622890.jpg?raw=true" width="500" height="350" alt="" >
                     </div>
                     <div class="container">
                         <form  action="/Explore" method="POST">
@@ -550,21 +550,21 @@ div.modal input[type=email],div.modal input[type=password],div.modal input[type=
                             </div>
                         </div>
                         <div style="position: absolute;">
-                            <img src="https://github.com/Swapna02/Quartine-time/blob/master/public/images/COVID-CHILD.png?raw=true" width="200" height="300" alt="" style="margin-left: 50px;" >
+                            <img src="https://github.com/Swapna02/Quarantine_time/blob/master/public/images/COVID-CHILD.png?raw=true" width="200" height="300" alt="" style="margin-left: 50px;" >
                         </div>  
                     </div>
                 
                     <div style="margin-top: -10px;" >
-                            <img src="https://github.com/Swapna02/Quartine-time/blob/master/public/images/Screenshot.png?raw=true" class="img1" width="200" height="300" alt="" >
+                            <img src="https://github.com/Swapna02/Quarantine_time/blob/master/public/images/Screenshot.png?raw=true" class="img1" width="200" height="300" alt="" >
                     </div>
 
                     <div class="card-body">
                         <div class="card imgtv ">
                             <div >
-                                <img src="https://github.com/Swapna02/Quartine-time/blob/master/public/images/SYMPTOM.png?raw=true" width="200" height="300" alt="" class="imgsym">
+                                <img src="https://github.com/Swapna02/Quarantine_time/blob/master/public/images/SYMPTOM.png?raw=true" width="200" height="300" alt="" class="imgsym">
                             </div>
                             <div >
-                                <img src="https://github.com/Swapna02/Quartine-time/blob/master/public/images/PRECAUTION.png?raw=true" width="200" height="300" alt="" class="imgsym" style="float: right;margin-top: -420;">
+                                <img src="https://github.com/Swapna02/Quarantine_time/blob/master/public/images/PRECAUTION.png?raw=true" width="200" height="300" alt="" class="imgsym" style="float: right;margin-top: -420;">
                             </div>
                         </div>
                     </div>
@@ -573,7 +573,7 @@ div.modal input[type=email],div.modal input[type=password],div.modal input[type=
                         <div >
                             <div class="tbmsg ">
                                 <b>
-                                    <h5>COVID 19 METER <label for="statecase" id="state_cases" onclick="states_cases()" >(CASES IN YOUR STATE)</label></h5>
+                                    <h5>COVID 19 METER <label for="statecase" id="state_cases" onclick="states_cases()" >(CASES IN _________ )</label></h5>
                                 </b>
                             </div>
                             <div class="card-body">
@@ -604,7 +604,7 @@ div.modal input[type=email],div.modal input[type=password],div.modal input[type=
                     </div>
                     
                         <div class="imgsd " >
-                            <img src="https://github.com/Swapna02/Quartine-time/blob/master/public/images/SOCIAL%20DISTANCE.png?raw=true" alt="" height="320px" width="370px">
+                            <img src="https://github.com/Swapna02/Quarantine_time/blob/master/public/images/SOCIAL%20DISTANCE.png?raw=true" alt="" height="320px" width="370px">
                           </div>
                           <div class="imgbaRr " >
                             <div id="columnchart_values" style="width: 50px; height: 300px;position: relative ; left: 65%; bottom: 10%;"></div>        
@@ -621,15 +621,13 @@ div.modal input[type=email],div.modal input[type=password],div.modal input[type=
                           <a class="nav-link" style="color: white;" href="/Explore">Explore</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" style="color: white;" href="/Developers">Developers</a>
-                        </li><li class="nav-item ">
-                            <a class="nav-link active" style="color: white;" href="#">Channels</a>
-                          </li>
+                          <a class="nav-link" style="color: white;" href="/Developer">Developers</a>
+                        </li>
                           <li class="nav-item" >
-                            <a class="nav-link" style="color: white;" href="#">Contact</a>
+                            <a class="nav-link" style="color: white;" href="/Help">Help</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" style="color: white;" href="#">Privacy</a>
+                            <a class="nav-link" style="color: white;" href="/Privacy">Privacy</a>
                           </li>
                       </ul>
                       <ul class="justify-content-end">
@@ -769,7 +767,7 @@ div.modal input[type=email],div.modal input[type=password],div.modal input[type=
         </div>
         <h6 style="margin-top: 1px; position: absolute; top: 90%; left: 27%;">Not signed up yet?.. <a href="#" onclick="document.getElementById('login-wrapper').style.display='none' ,document.getElementById('Register-wrapper').style.display='block'">Sing Up</a> </h6>
     </form> 
-    <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
+    <!-- <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
         <ul class="nav" >
             <li class="nav-item ">
               <a class="nav-link" style="color: white;" href="/About">About</a>
@@ -778,15 +776,13 @@ div.modal input[type=email],div.modal input[type=password],div.modal input[type=
               <a class="nav-link" style="color: white;" href="/Explore">Explore</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style="color: white;" href="/Developers">Developers</a>
-            </li><li class="nav-item ">
-                <a class="nav-link active" style="color: white;" href="#">Channels</a>
-              </li>
+              <a class="nav-link" style="color: white;" href="/Developer">Developers</a>
+            </li>
               <li class="nav-item" >
-                <a class="nav-link" style="color: white;" href="#">Contact</a>
+                <a class="nav-link" style="color: white;" href="/Help">Help</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" style="color: white;" href="#">Privacy</a>
+                <a class="nav-link" style="color: white;" href="/Privacy">Privacy</a>
               </li>
           </ul>
           <ul class="justify-content-end">
@@ -794,8 +790,9 @@ div.modal input[type=email],div.modal input[type=password],div.modal input[type=
                 <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
               </svg>
           </ul>
-      </nav>
- </div>
+      </nav> -->
+ 
+    </div>
 
 
  <div id="Register-wrapper" class="modal">
@@ -814,7 +811,7 @@ div.modal input[type=email],div.modal input[type=password],div.modal input[type=
         </div>
         <h6 style="margin-top: 1px;margin-bottom: 10px; position: absolute; top: 88%; left: 27%;">Already singed up..? <a href="#" onclick="document.getElementById('login-wrapper').style.display='block' ,document.getElementById('Register-wrapper').style.display='none'">Sing In</a> </h6>
     </form> 
-    <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
+    <!-- <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
         <ul class="nav" >
             <li class="nav-item ">
               <a class="nav-link" style="color: white;" href="/About">About</a>
@@ -823,15 +820,13 @@ div.modal input[type=email],div.modal input[type=password],div.modal input[type=
               <a class="nav-link" style="color: white;" href="/Explore">Explore</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style="color: white;" href="/Developers">Developers</a>
-            </li><li class="nav-item ">
-                <a class="nav-link active" style="color: white;" href="#">Channels</a>
-              </li>
+              <a class="nav-link" style="color: white;" href="/Developer">Developers</a>
+            </li>
               <li class="nav-item" >
-                <a class="nav-link" style="color: white;" href="#">Contact</a>
+                <a class="nav-link" style="color: white;" href="/Help">Help</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" style="color: white;" href="#">Privacy</a>
+                <a class="nav-link" style="color: white;" href="/Privacy">Privacy</a>
               </li>
           </ul>
           <ul class="justify-content-end">
@@ -839,7 +834,7 @@ div.modal input[type=email],div.modal input[type=password],div.modal input[type=
                 <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
               </svg>
           </ul>
-      </nav>
+      </nav> -->
  </div>
 
 

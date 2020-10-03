@@ -41,7 +41,7 @@
     top: 80%;
 }
            body{
-            background-image: url("https://github.com/Swapna02/Quartine-time/blob/master/public/images/background.jpg?raw=true");
+            background-image: url("https://github.com/Swapna02/Quarantine_time/blob/master/public/images/background.jpg?raw=true");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -205,24 +205,24 @@ div.modal input[type=text],div.modal input[type=password],div.modal input[type=t
         </div> -->
         <div>
            
-            <div class="row row-cols-1 row-cols-md-4" style="margin: 30; margin-left: 100;">
+            <div class="row row-cols-1 row-cols-md-5" style="margin: 30; margin-left: 100;">
                 <% if(tl>0){ %>
                 <% things.forEach(function (post) { %>
                     
                 <div class="card"style="margin:25;">
                     <div class="card-body">
                         <nav class="navbar navbar-primary">
-                            <a class="navbar-brand" href="#">
+                            <a class="navbar-brand" style="margin-left: -22px;" href="#">
                                 <% if(post.userpic){ %>
                                     <img src="./uploads/<%= post.userpic %>" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
                                     <% }else{ %>
-                                      <img src="https://github.com/Swapna02/Quartine-time/blob/master/public/images/userdefpic.jpg?raw=true" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+                                      <img src="https://github.com/Swapna02/Quarantine_time/blob/master/public/images/userdefpic.jpg?raw=true" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
                                       <% } %>
                                 <label for="usern" style="font-size:medium;" onclick="window.location.href='/user_profile'"><%= post.username %></label>
                             </a>
 
                             <div class="nothing">
-                                <small class="text-muted"><%= post.crDate %></small> 
+                                <small class="text-muted"style="font-size: 11px;"><%= post.crDate %></small> 
                             </div>
                         </nav>
                         <% if(post.info != ''){ %>
@@ -252,36 +252,30 @@ div.modal input[type=text],div.modal input[type=password],div.modal input[type=t
             </div>
         </div>
 
-        <!-- <nav class="navbar sticky-bottom navbar-light bg-primary">
+        <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
             <ul class="nav" >
                 <li class="nav-item ">
-                  <a class="nav-link" style="color: white; href="#">About</a>
+                  <a class="nav-link" style="color: white;" href="/About">About</a>
                 </li>
                 <li class="nav-item" >
-                  <a class="nav-link" style="color: white; href="#">Gallery</a>
+                  <a class="nav-link" style="color: white;" href="/Explore">Explore</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" style="color: white; href="#">Developers</a>
-                </li><li class="nav-item ">
-                    <a class="nav-link active" style="color: white; href="#">Channels</a>
-                  </li>
+                  <a class="nav-link" style="color: white;" href="/Developer">Developers</a>
+                </li>
                   <li class="nav-item" >
-                    <a class="nav-link" style="color: white; href="#">Contact</a>
+                    <a class="nav-link" style="color: white;" href="/Help">Help</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" style="color: white; href="#">Privacy</a>
+                    <a class="nav-link" style="color: white;" href="/Privacy">Privacy</a>
                   </li>
-                  <ul class="nav justify-content-end" style="float: right;">
-                      <li style="float: right; margin-left: 1450px; margin-top: -35px;">
-                        <svg class="bi bi-arrow-up-square-fill" width="2em" height="2em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg" >
-                            <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
-                        </svg>
-                    </li>
-                  </ul>
               </ul>
-          </nav> -->
-
-
+              <ul class="justify-content-end">
+                <svg class="bi bi-arrow-up-square-fill sarrow"  style="margin-top: 12px;" width="2em" height="2em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
+                  </svg>
+              </ul>
+          </nav>
           
       
           <div id="modal-wrapper" class="modal">
@@ -307,7 +301,7 @@ div.modal input[type=text],div.modal input[type=password],div.modal input[type=t
                             <% if(things[0].userpic){ %>
                                 <img src="./uploads/<%= things[0].userpic %>" class="mr-3" alt="..." width="50px" height="50px">
                                 <% }else{ %>
-                                  <img src="https://github.com/Swapna02/Quartine-time/blob/master/public/images/userdefpic.jpg?raw=true" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+                                  <img src="https://github.com/Swapna02/Quarantine_time/blob/master/public/images/userdefpic.jpg?raw=true" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
                                   <% } %>
                                 <div class="media-body">
                                   <% if(things[0].info){ %>
@@ -320,7 +314,7 @@ div.modal input[type=text],div.modal input[type=password],div.modal input[type=t
                   </div>
               </div>
               
-              <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
+              <!-- <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
                 <ul class="nav" >
                     <li class="nav-item ">
                       <a class="nav-link" style="color: white;" href="/About">About</a>
@@ -329,15 +323,13 @@ div.modal input[type=text],div.modal input[type=password],div.modal input[type=t
                       <a class="nav-link" style="color: white;" href="/Explore">Explore</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" style="color: white;" href="/Developers">Developers</a>
-                    </li><li class="nav-item ">
-                        <a class="nav-link active" style="color: white;" href="#">Channels</a>
-                      </li>
+                      <a class="nav-link" style="color: white;" href="/Developer">Developers</a>
+                    </li>
                       <li class="nav-item" >
-                        <a class="nav-link" style="color: white;" href="#">Contact</a>
+                        <a class="nav-link" style="color: white;" href="/Help">Help</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" style="color: white;" href="#">Privacy</a>
+                        <a class="nav-link" style="color: white;" href="/Privacy">Privacy</a>
                       </li>
                   </ul>
                   <ul class="justify-content-end">
@@ -345,7 +337,7 @@ div.modal input[type=text],div.modal input[type=password],div.modal input[type=t
                         <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
                       </svg>
                   </ul>
-              </nav>
+              </nav> -->
          </div>
  
  <% if(msg !=''){ %> 
@@ -390,7 +382,7 @@ div.modal input[type=text],div.modal input[type=password],div.modal input[type=t
           <button type="submit" class="signupbtn" >Create my space</button>
         </div>
     </form> 
-    <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
+    <!-- <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
         <ul class="nav" >
             <li class="nav-item ">
               <a class="nav-link" style="color: white;" href="/About">About</a>
@@ -415,12 +407,11 @@ div.modal input[type=text],div.modal input[type=password],div.modal input[type=t
                 <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
               </svg>
           </ul>
-      </nav>
+      </nav> -->
  </div>
 
 
          <script>
-         $(document).ready(function(){
 
 $(document).ready(function(){
 var dtl = $(".inf").text().length;
@@ -428,7 +419,7 @@ var dtl = $(".inf").text().length;
 if(dtl>10){
 $('.inf').text($('.inf').text().substr(0,10)+"...");
 } 
-})
+});
 var modal = document.getElementById('modal-wrapper');
 window.onclick = function(event) {
  if (event.target == modal) {

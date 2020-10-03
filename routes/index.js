@@ -11,6 +11,7 @@ const multer = require('multer');
 const  path  = require('../app');
 var parth = require('path');
 const { post, render } = require('../app');
+const fs = require('fs');
 const commentModel = require('../modules/commentData');
 const FeededModel = require('../modules/feedData');
 var ObjectId = require("mongodb").ObjectId;
@@ -137,6 +138,15 @@ function checkemail(req,res,next){
     next();
   });
 }
+// Function to get current filenames 
+// in directory with specific extension 
+function getFilesInDirectory() { 
+  // console.log("\nFiles present in directory:"); 
+  let files = fs.readdirSync("./public/uploads/"); 
+  files.forEach(file => { 
+    // console.log(file); 
+  }); 
+}
 
 router.get('/', function(req, res, next) {
   FeededModule.find().then(
@@ -181,7 +191,7 @@ router.get('/Gallery',checkLoginUser, function(req, res, next) {
       FeededModule.findOneAndUpdate({date:things[i].date},{
         crDate:rt,
       },{new:true},(err,doc)=>{
-        console.log("updated");
+        // console.log("updated");
         if(err) throw err
      })
     }
@@ -607,6 +617,7 @@ router.post('/feed', function(req, res, next) {
     FeededModule.find().then(
       (things) => {
         var u= localStorage.getItem('loginUser');
+        // console.log(u);
         things=things.reverse();
         var length=4;
         var i;
@@ -933,10 +944,27 @@ else{
 });
 router.get('/deletePost/:id',function(req,res,next){
   var id=req.params.id;
+  // Storage._removeFile()
+
   FeededModule.findByIdAndDelete(id,function(err,docs){
     if(err)
 console.log(err);
 else{
+  var nm="./public/uploads/"+docs.image;
+  getFilesInDirectory(); 
+  console.log("heyyy");
+// Delete example_file.txt 
+fs.unlink(nm, (err => { 
+  if (err) console.log(err); 
+  else { 
+    console.log("\nDeleted file"+nm); 
+  
+    // Get the files in current diectory 
+    // after deletion 
+    getFilesInDirectory(); 
+  } 
+})); 
+  
   // console.log(docs.id);
   res.redirect('/gallery');
 }
@@ -967,5 +995,17 @@ router.post('/Help',checkLoginUser, function(req, res, next) {
   });
 }
 });
-
+router.get('/Developer', function(req, res, next) {
+  var u= localStorage.getItem('loginUser');
+  res.render('Developer', { title: 'Quartine Time',user:u });
+});
+router.get('/Privacy', function(req, res, next) {
+  var u= localStorage.getItem('loginUser');
+  res.render('Privacy', { title: 'Quartine Time',user:u });
+});
 module.exports = router;
+
+
+
+
+

@@ -41,7 +41,7 @@
     top: 80%;
 }
            body{
-            background-image: url("https://github.com/Swapna02/Quartine-time/blob/master/public/images/background.jpg?raw=true");
+            background-image: url("https://github.com/Swapna02/Quarantine_time/blob/master/public/images/background.jpg?raw=true");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -55,7 +55,7 @@
 
 }
 
-div.modal input[type=text],div.modal input[type=password],div.modal input[type=tel] {
+div.modal input[type=email],div.modal input[type=password],div.modal input[type=tel] {
     width: 80%;
     padding: 10px 20px;
     margin: 14px 26px 10px 4px;
@@ -143,7 +143,7 @@ div.modal input[type=text],div.modal input[type=password],div.modal input[type=t
             <nav  class="navbar navbar-expand-lg navbar-light bg-primary">
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
                     <div class="navbar-nav" >
-                        <a class="nav-item nav-link  " href="/">HOME </a>
+                        <!-- <a class="nav-item nav-link  " href="/">HOME </a> -->
                         <% if (!user){ %>
                             <a class="nav-item nav-link " onclick=" document.getElementById('login-wrapper').style.display='block'" style="display:block;" href="#">FEED </a>
                             <% } else { %>
@@ -203,23 +203,23 @@ div.modal input[type=text],div.modal input[type=password],div.modal input[type=t
         </div> -->
         <div>
            
-            <div class="row row-cols-1 row-cols-md-4" style="margin: 30; margin-left: 100;">
+            <div class="row row-cols-1 row-cols-md-5" style="margin: 30; margin-left: 100;">
            
                 <% things.forEach(function (t) { %>
                 <div class="card"style="margin:25;">
                     <div class="card-body">
                         <nav class="navbar navbar-primary">
-                            <a class="navbar-brand" href="#">
+                            <a class="navbar-brand" style="margin-left: -22px;" href="#">
                                 <% if(t.userpic){ %>
                                 <img src="../uploads/<%= t.userpic %>" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
                                 <% }else{ %>
-                                    <img src="https://github.com/Swapna02/Quartine-time/blob/master/public/images/userdefpic.jpg?raw=true" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+                                    <img src="https://github.com/Swapna02/Quarantine_time/blob/master/public/images/userdefpic.jpg?raw=true" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
                                     <% } %>
                                 <label for="usern" style="font-size:medium;"><%= t.username %></label>
                             </a>
 
                             <div class="nothing">
-                                <small class="text-muted"><%= t.crDate %></small> 
+                                <small class="text-muted"style="font-size: 11px;"><%= t.crDate %></small> 
                             </div>
                         </nav>
                         <% if(t.info != ''){ %>
@@ -260,15 +260,13 @@ div.modal input[type=text],div.modal input[type=password],div.modal input[type=t
                   <a class="nav-link" style="color: white;" href="/Explore">Explore</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" style="color: white;" href="/Developers">Developers</a>
-                </li><li class="nav-item ">
-                    <a class="nav-link active" style="color: white;" href="#">Channels</a>
-                  </li>
+                  <a class="nav-link" style="color: white;" href="/Developer">Developers</a>
+                </li>
                   <li class="nav-item" >
-                    <a class="nav-link" style="color: white;" href="/Help">Contact</a>
+                    <a class="nav-link" style="color: white;" href="/Help">Help</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" style="color: white;" href="#">Privacy</a>
+                    <a class="nav-link" style="color: white;" href="/Privacy">Privacy</a>
                   </li>
               </ul>
               <ul class="justify-content-end">
@@ -295,7 +293,7 @@ div.modal input[type=text],div.modal input[type=password],div.modal input[type=t
             <% if(p.userpic){ %>
                 <img src="../uploads/<%= p.userpic %>" class="mr-3" alt="..." width="50px" height="50px">
                 <% }else{ %>
-                  <img src="https://github.com/Swapna02/Quartine-time/blob/master/public/images/userdefpic.jpg?raw=true" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+                  <img src="https://github.com/Swapna02/Quarantine_time/blob/master/public/images/userdefpic.jpg?raw=true" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
                   <% } %>
                 <div class="media-body">
                   <% if(p.info){ %>
@@ -307,7 +305,7 @@ div.modal input[type=text],div.modal input[type=password],div.modal input[type=t
           </div>
       </div>
       
-      <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
+      <!-- <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
         <ul class="nav" >
             <li class="nav-item ">
               <a class="nav-link" style="color: white;" href="/About">About</a>
@@ -332,7 +330,7 @@ div.modal input[type=text],div.modal input[type=password],div.modal input[type=t
                 <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
               </svg>
           </ul>
-      </nav>
+      </nav> -->
  </div>
  
  <% if(msg !=''){ %> 
@@ -351,20 +349,67 @@ div.modal input[type=text],div.modal input[type=password],div.modal input[type=t
     
     
            
-<div id="login-wrapper" class="modal">
-    <span onclick="document.getElementById('login-wrapper').style.display='none'" class="close_login" title="Close Modal">&times;</span>
-    <form class="modal-content"  action="/Explore" >
-        <div class="container1">
-          <h3 class="syi">Share your idea</h3>
-          <br>
-          <input type="text" placeholder="Enter Name" name="uname" id="name" required>
-          <br>
-          <input type="password" placeholder="Enter Password" name="upswd" id="p" required>
-          <br>
-          <button type="submit" class="signupbtn" >Create my space</button>
-        </div>
-    </form> 
-    <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
+         <div id="login-wrapper" class="modal">
+            <span onclick="document.getElementById('login-wrapper').style.display='none'" class="close_login" title="Close Modal">&times;</span>
+           
+            <form class="modal-content" action="/feed" method="POST"  >
+                <div class="container1" style="height: 230px;">
+                  <h3 class="syi">Share your idea</h3>
+                  <br>
+                  <input type="email" placeholder="Enter email" name="uemail" id="lemail" required>
+                  <br>
+                  <input type="password" placeholder="Enter Password" name="upassword" id="lp" required>
+                  <br>
+                  <button type="submit" class="signupbtn" style="margin-bottom: 15px; top: 77%; left: 35%;" onclick="regvalidate()">Create my space</button>
+                </div>
+                <h6 style="margin-top: 1px; position: absolute; top: 90%; left: 27%;">Not signed up yet?.. <a href="#" onclick="document.getElementById('login-wrapper').style.display='none' ,document.getElementById('Register-wrapper').style.display='block'">Sing Up</a> </h6>
+            </form> 
+            <!-- <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
+              <ul class="nav" >
+                  <li class="nav-item ">
+                    <a class="nav-link" style="color: white;" href="/About">About</a>
+                  </li>
+                  <li class="nav-item" >
+                    <a class="nav-link" style="color: white;" href="/Explore">Explore</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" style="color: white;" href="/Developers">Developers</a>
+                  </li><li class="nav-item ">
+                      <a class="nav-link active" style="color: white;" href="#">Channels</a>
+                    </li>
+                    <li class="nav-item" >
+                      <a class="nav-link" style="color: white;" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" style="color: white;" href="#">Privacy</a>
+                    </li>
+                </ul>
+                <ul class="justify-content-end">
+                  <svg class="bi bi-arrow-up-square-fill sarrow"  style="margin-top: 12px;" width="2em" height="2em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
+                    </svg>
+                </ul>
+            </nav> -->
+         </div>
+  
+   <div id="Register-wrapper" class="modal">
+      <span onclick="document.getElementById('Register-wrapper').style.display='none'" class="close_login" title="Close Modal">&times;</span>
+      <form action="/" method="POST" class="modal-content" style="height: 350px;"  >
+          <div class="container1" >
+            <h3 class="syi">Register here</h3>
+            <br><br>
+            <input type="email" placeholder="Enter email" name="uremail" id="name" required >
+            <br>
+            <input type="password" placeholder="Enter Password" name="urpswd" id="p" required>
+            <br>
+            <input type="password" placeholder="Confirm Password" name="urcpswd" id="cp" required>
+            <br>
+            <button type="submit" class="signupbtn" style="margin-bottom: 10px; top: 77%;left: 40%;" onclick="regisvalidate()">Register here</button>
+            <br>
+          </div>
+          <h6 style="margin-top: 1px;margin-bottom: 10px; position: absolute; top: 88%; left: 27%;">Already singed up..? <a href="#" onclick="document.getElementById('login-wrapper').style.display='block' ,document.getElementById('Register-wrapper').style.display='none'">Sing In</a> </h6>
+      </form> 
+      <!-- <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
         <ul class="nav" >
             <li class="nav-item ">
               <a class="nav-link" style="color: white;" href="/About">About</a>
@@ -378,7 +423,7 @@ div.modal input[type=text],div.modal input[type=password],div.modal input[type=t
                 <a class="nav-link active" style="color: white;" href="#">Channels</a>
               </li>
               <li class="nav-item" >
-                <a class="nav-link" style="color: white;" href="/Help">Contact</a>
+                <a class="nav-link" style="color: white;" href="#">Contact</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" style="color: white;" href="#">Privacy</a>
@@ -389,8 +434,9 @@ div.modal input[type=text],div.modal input[type=password],div.modal input[type=t
                 <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
               </svg>
           </ul>
-      </nav>
- </div>
+      </nav> -->
+  
+    </div>
 
 
          <script>

@@ -41,7 +41,7 @@
     top: 80%;
 }
            body{
-            background-image: url("https://github.com/Swapna02/Quartine-time/blob/master/public/images/background.jpg?raw=true");
+            background-image: url("https://github.com/Swapna02/Quarantine_time/blob/master/public/images/background.jpg?raw=true");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -200,30 +200,30 @@ div.modal input[type=text],div.modal input[type=password],div.modal input[type=t
         </div> -->
         <div>
            
-            <div class="row row-cols-1 row-cols-md-4" style="margin: 30; margin-left: 100;">
+            <div class="row row-cols-1 row-cols-md-5" style="margin: 30; margin-left: 100;">
            
                 <% things.forEach(function (t) { %>
                 <div class="card"style="margin:25;">
                     <div class="card-body">
                         <nav class="navbar navbar-primary">
-                            <a class="navbar-brand" href="#">
+                            <a class="navbar-brand" style="margin-left: -22px;" href="#">
                                 <% if(t.userpic){ %>
                                     <img src="../uploads/<%= t.userpic %>" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
                                     <% }else{ %>
-                                        <img src="https://github.com/Swapna02/Quartine-time/blob/master/public/images/userdefpic.jpg?raw=true" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+                                        <img src="https://github.com/Swapna02/Quarantine_time/blob/master/public/images/userdefpic.jpg?raw=true" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
                                         <% } %>
                                 <label for="usern" style="font-size:medium;"><%= t.username %></label>
                             </a>
 
                             <div class="nothing">
-                                <small class="text-muted"><%= t.crDate %></small> 
+                                <small class="text-muted"style="font-size: 11px;"><%= t.crDate %></small> 
                             </div>
                         </nav>
                         <% if(t.info != ''){ %>
                             <p class="card-text" style="font-size: 12;"><%= t.info %></p>
                             <% } %>
                             <% if(t.image != ''){ %>
-                            <img src="../uploads/<%= t.image %>" class="card-img-bottom" alt=".." width="200px" onclick="window.location.href='<%= t._id %>'">
+                            <img src="../uploads/<%= t.image %>" class="card-img-bottom" alt=".." width="200px" height="350px" onclick="window.location.href='<%= t._id %>'">
                             <% } %>
                             <div style="margin-top: 15;margin-left: 2 ;">
                                 <svg class="bi bi-heart-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
@@ -255,15 +255,13 @@ div.modal input[type=text],div.modal input[type=password],div.modal input[type=t
                   <a class="nav-link" style="color: white;" href="/Explore">Explore</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" style="color: white;" href="/Developers">Developers</a>
-                </li><li class="nav-item ">
-                    <a class="nav-link active" style="color: white;" href="#">Channels</a>
-                  </li>
+                  <a class="nav-link" style="color: white;" href="/Developer">Developers</a>
+                </li>
                   <li class="nav-item" >
-                    <a class="nav-link" style="color: white;" href="/Help">Contact</a>
+                    <a class="nav-link" style="color: white;" href="/Help">Help</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" style="color: white;" href="#">Privacy</a>
+                    <a class="nav-link" style="color: white;" href="/Privacy">Privacy</a>
                   </li>
               </ul>
               <ul class="justify-content-end">
@@ -272,7 +270,6 @@ div.modal input[type=text],div.modal input[type=password],div.modal input[type=t
                   </svg>
               </ul>
           </nav>
-
 
           <div id="modal-wrapper" class="modal">
             <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -289,7 +286,7 @@ div.modal input[type=text],div.modal input[type=password],div.modal input[type=t
                     <% if(p.userpic){ %>
                         <img src="../uploads/<%= p.userpic %>" class="mr-3" alt="..." width="50px" height="50px">
                         <% }else{ %>
-                          <img src="https://github.com/Swapna02/Quartine-time/blob/master/public/images/userdefpic.jpg?raw=true" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+                          <img src="https://github.com/Swapna02/Quarantine_time/blob/master/public/images/userdefpic.jpg?raw=true" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
                           <% } %>
                         <div class="media-body">
                           <% if(p.info){ %>
@@ -301,7 +298,7 @@ div.modal input[type=text],div.modal input[type=password],div.modal input[type=t
                   </div>
               </div>
               
-              <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
+              <!-- <nav class="navbar sticky-bottom navbar-light bg-primary" style="margin-top: 0%;">
                 <ul class="nav" >
                     <li class="nav-item ">
                       <a class="nav-link" style="color: white;" href="/About">About</a>
@@ -326,7 +323,7 @@ div.modal input[type=text],div.modal input[type=password],div.modal input[type=t
                         <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
                       </svg>
                   </ul>
-              </nav>
+              </nav> -->
          </div>
  
  <% if(msg !=''){ %> 
@@ -345,7 +342,7 @@ div.modal input[type=text],div.modal input[type=password],div.modal input[type=t
     
     
            
-<div id="login-wrapper" class="modal">
+<!-- <div id="login-wrapper" class="modal">
     <span onclick="document.getElementById('login-wrapper').style.display='none'" class="close_login" title="Close Modal">&times;</span>
     <form class="modal-content"  action="/Explore" >
         <div class="container1">
@@ -384,7 +381,7 @@ div.modal input[type=text],div.modal input[type=password],div.modal input[type=t
               </svg>
           </ul>
       </nav>
- </div>
+ </div> -->
 
 
          <script>
